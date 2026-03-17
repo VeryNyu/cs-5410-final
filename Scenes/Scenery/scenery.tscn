@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cirgelblwe0u7"]
+
+[ext_resource type="PackedScene" uid="uid://do3iyyluon4d7" path="res://Scenes/Components/SceneryComponents/foreground.tscn" id="1_aiam4"]
+[ext_resource type="PackedScene" uid="uid://pu7gaq11h5fo" path="res://Scenes/Components/SceneryComponents/background.tscn" id="2_784p5"]
+
+[node name="Scenery" type="Node2D" unique_id=998705863]
+
+[node name="Background" parent="." unique_id=730448974 instance=ExtResource("2_784p5")]
+
+[node name="Foreground" parent="." unique_id=238532215 instance=ExtResource("1_aiam4")]
