@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://owg5t2cg63bk" path="res://Scripts/Player/player.gd" id="1_a3d8c"]
 [ext_resource type="Texture2D" uid="uid://b85w7vugm2mh8" path="res://Assets/Main Characters/Virtual Guy/Idle (32x32).png" id="1_uvnfx"]
 [ext_resource type="Texture2D" uid="uid://d3isrjj2f2gpt" path="res://Assets/Main Characters/Virtual Guy/Double Jump (32x32).png" id="2_xpcdj"]
+[ext_resource type="PackedScene" uid="uid://jdj4brdtkony" path="res://Scenes/Components/UI/camera.tscn" id="4_mtuoh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_06tpx"]
 atlas = ExtResource("2_xpcdj")
@@ -140,13 +141,16 @@ animations = [{
 height = 22.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1695953942]
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_a3d8c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=85044737]
 sprite_frames = SubResource("SpriteFrames_06tpx")
 animation = &"double_jump"
-frame_progress = 0.72715485
+frame_progress = 0.40086275
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1364292054]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_tugb3")
+
+[node name="Camera" parent="." unique_id=1169797830 instance=ExtResource("4_mtuoh")]

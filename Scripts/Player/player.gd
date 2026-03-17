@@ -1,11 +1,17 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 200.0
+const JUMP_VELOCITY = -300.0
 
+var screen_size
+
+
+func _ready() -> void:
+	screen_size = get_viewport_rect().size
 
 func _physics_process(delta: float) -> void:
+	
 	# Add the gravity.
 	if not is_on_floor():
 		$AnimatedSprite2D.play("double_jump")
@@ -28,5 +34,9 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.flip_h = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	# Clamp the position between top-left (0,0) and bottom-right (screen_size)
+	position.x = clamp(position.x, 0, 3272)
+	position.y = clamp(position.y, 0, screen_size.y)
 
 	move_and_slide()

@@ -4,8 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://dsteavlr2tly6" path="res://Scenes/Player/player.tscn" id="2_bo1nx"]
 
 [node name="Main" type="Node2D" unique_id=103568734]
+metadata/_edit_vertical_guides_ = [3584.0, 3272.0, 3485.0]
+metadata/_edit_horizontal_guides_ = [256.0]
 
 [node name="Scenery" parent="." unique_id=1333351965 instance=ExtResource("1_jjgbg")]
 
 [node name="Player" parent="." unique_id=1695953942 instance=ExtResource("2_bo1nx")]
-position = Vector2(326, 54)
