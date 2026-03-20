@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" format=3 uid="uid://chfaft1hf8noy"]
 
-[ext_resource type="Texture2D" uid="uid://ck0m83nyiw5bw" path="res://Assets/Terrain/Terrain (16x16).png" id="1_se4sk"]
+[ext_resource type="Texture2D" uid="uid://ck0m83nyiw5bw" path="res://Assets/Terrain/Terrain (16x16).png" id="1_wk71s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jsq5q"]
-texture = ExtResource("1_se4sk")
+texture = ExtResource("1_wk71s")
 6:0/0 = 0
 6:0/0/terrain_set = 0
 6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 4, -8, 4)
@@ -60,6 +60,7 @@ texture = ExtResource("1_se4sk")
 10:0/0/terrain_set = 0
 9:0/0 = 0
 9:0/0/terrain_set = 0
+12:1/0 = 0
 
 [resource]
 physics_layer_0/collision_layer = 1

@@ -134,7 +134,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 30.0
+"speed": 25.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tugb3"]
@@ -146,8 +146,9 @@ script = ExtResource("1_a3d8c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=85044737]
 sprite_frames = SubResource("SpriteFrames_06tpx")
-animation = &"double_jump"
-frame_progress = 0.40086275
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.21479434
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1364292054]
 position = Vector2(0, 2)
