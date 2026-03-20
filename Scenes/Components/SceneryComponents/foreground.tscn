@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://do3iyyluon4d7"]
 
-[ext_resource type="TileSet" uid="uid://chfaft1hf8noy" path="res://Assets/Terrain/Terrain 0.tres" id="1_2gj21"]
+[ext_resource type="TileSet" uid="uid://chfaft1hf8noy" path="res://Assets/Terrain/Overworld.tres" id="1_2gj21"]
 [ext_resource type="Texture2D" uid="uid://djioy2nv7spvu" path="res://TEMPFILES/SuperMarioBrosMap1-1.png" id="1_bxq74"]
 
 [node name="Foreground" type="Node2D" unique_id=238532215]
