@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dtaqx4b7qx7gp"]
+
+[node name="Hud" type="Control" unique_id=1581275617]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_horizontal_guides_ = [89.0]
+
+[node name="Score" type="VBoxContainer" parent="." unique_id=1700914558]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.1
+anchor_bottom = 0.1
+offset_left = -25.599998
+offset_top = -25.02
+offset_right = 25.400002
+offset_bottom = 24.98
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="Score" unique_id=413780409]
+layout_mode = 2
+text = "SCORE"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Score" unique_id=1095129665]
+layout_mode = 2
+text = "00000"
+horizontal_alignment = 1
+
+[node name="Time" type="VBoxContainer" parent="." unique_id=1921174796]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.1
+offset_left = -27.5
+offset_top = -25.0
+offset_right = 27.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="Time" unique_id=159936409]
+layout_mode = 2
+text = "TIME"
+horizontal_alignment = 1
+
+[node name="Time" type="Label" parent="Time" unique_id=733436671]
+layout_mode = 2
+text = "0:00:00"
+horizontal_alignment = 1

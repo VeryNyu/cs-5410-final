@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cuiqn14hl4rt8"]
+
+[ext_resource type="PackedScene" uid="uid://dtaqx4b7qx7gp" path="res://Scenes/UI/HUD.tscn" id="1_37xw0"]
+[ext_resource type="PackedScene" uid="uid://6trcy8p7ik7m" path="res://Scenes/UI/MenuManager.tscn" id="2_ereyx"]
+
+[node name="Ui" type="CanvasLayer" unique_id=1121390421]
+
+[node name="Hud" parent="." unique_id=1581275617 instance=ExtResource("1_37xw0")]
+visible = false
+
+[node name="MenuManager" parent="." unique_id=1460058314 instance=ExtResource("2_ereyx")]

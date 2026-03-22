@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://6trcy8p7ik7m"]
+
+[ext_resource type="PackedScene" uid="uid://dsf0278rtqx76" path="res://Scenes/UI/Menus/start.tscn" id="1_461o4"]
+[ext_resource type="Script" uid="uid://du68cwjcob5i5" path="res://Scripts/UI/menu_manager.gd" id="1_v2q0d"]
+[ext_resource type="PackedScene" uid="uid://d27k1rpj82c4p" path="res://Scenes/UI/Menus/levelSelect.tscn" id="2_mnsdd"]
+[ext_resource type="PackedScene" uid="uid://doqccvf570odg" path="res://Scenes/UI/Menus/leaderboard.tscn" id="3_mnsdd"]
+
+[node name="MenuManager" type="Control" unique_id=1460058314]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v2q0d")
+
+[node name="Start" parent="." unique_id=915505992 instance=ExtResource("1_461o4")]
+layout_mode = 1
+
+[node name="LevelSelect" parent="." unique_id=1299804562 instance=ExtResource("2_mnsdd")]
+visible = false
+layout_mode = 1
+
+[node name="Leaderboard" parent="." unique_id=1694604272 instance=ExtResource("3_mnsdd")]
+visible = false
+layout_mode = 1
+
+[connection signal="Change" from="Start" to="." method="_on_signal"]
+[connection signal="Change" from="LevelSelect" to="." method="_on_signal"]
+[connection signal="Change" from="Leaderboard" to="." method="_on_signal"]
