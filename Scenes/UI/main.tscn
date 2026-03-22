@@ -11,7 +11,6 @@ grow_vertical = 2
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=618991188]
 
 [node name="Home" type="VBoxContainer" parent="CanvasLayer" unique_id=1720736479]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -35,7 +34,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "High Scores"
 
-[node name="Button" type="Button" parent="CanvasLayer/Home" unique_id=423680403]
+[node name="Exit" type="Button" parent="CanvasLayer/Home" unique_id=423680403]
 layout_mode = 2
 text = "Exit"
 
@@ -53,6 +52,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Play" type="VBoxContainer" parent="CanvasLayer" unique_id=18443864]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
