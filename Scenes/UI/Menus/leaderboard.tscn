@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://doqccvf570odg"]
+
+[node name="Leaderboard" type="Control" unique_id=1694604272]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_vertical_guides_ = [320.1349]
+
+[node name="Container" type="VBoxContainer" parent="." unique_id=831471225]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -91.0
+offset_right = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Title" type="HBoxContainer" parent="Container" unique_id=221287819]
+layout_mode = 2
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Level" type="Label" parent="Container/Title" unique_id=429106209]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Level: 1"
+horizontal_alignment = 1
+
+[node name="Left" type="Button" parent="Container/Title/Level" unique_id=1843927748]
+visible = false
+layout_mode = 0
+offset_left = -22.0
+offset_top = -4.0
+offset_right = -4.0
+offset_bottom = 27.0
+grow_vertical = 2
+text = "<"
+
+[node name="Right" type="Button" parent="Container/Title/Level" unique_id=201228488]
+layout_mode = 0
+offset_left = 62.0
+offset_top = -4.0
+offset_right = 80.0
+offset_bottom = 27.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+text = ">"
+
+[node name="Scores" type="HBoxContainer" parent="Container" unique_id=1228632389]
+layout_mode = 2
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Ranks" type="Label" parent="Container/Scores" unique_id=1168529703]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "1
+2
+3
+4
+5"
+vertical_alignment = 2
+
+[node name="Padding" type="CenterContainer" parent="Container/Scores" unique_id=1534135196]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Times" type="VBoxContainer" parent="Container/Scores" unique_id=454519386]
+layout_mode = 2
+size_flags_horizontal = 8
+alignment = 1
+
+[node name="Times" type="Label" parent="Container/Scores/Times" unique_id=116497212]
+layout_mode = 2
+text = "Times"
+horizontal_alignment = 1
+
+[node name="1" type="Label" parent="Container/Scores/Times" unique_id=1835138862]
+layout_mode = 2
+text = "FFF: 0:20:25"
+horizontal_alignment = 1
+
+[node name="2" type="Label" parent="Container/Scores/Times" unique_id=154036729]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="3" type="Label" parent="Container/Scores/Times" unique_id=1876276603]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="4" type="Label" parent="Container/Scores/Times" unique_id=827438331]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="5" type="Label" parent="Container/Scores/Times" unique_id=782606682]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Padding2" type="CenterContainer" parent="Container/Scores" unique_id=918394471]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Scores" type="VBoxContainer" parent="Container/Scores" unique_id=1889701042]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Scores" type="Label" parent="Container/Scores/Scores" unique_id=709595074]
+layout_mode = 2
+text = "Scores"
+horizontal_alignment = 1
+
+[node name="1" type="Label" parent="Container/Scores/Scores" unique_id=437495590]
+layout_mode = 2
+text = "QQQ: 420"
+horizontal_alignment = 1
+
+[node name="2" type="Label" parent="Container/Scores/Scores" unique_id=1097819062]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="3" type="Label" parent="Container/Scores/Scores" unique_id=493389294]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="4" type="Label" parent="Container/Scores/Scores" unique_id=1116066686]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="5" type="Label" parent="Container/Scores/Scores" unique_id=1474452051]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Padding" type="CenterContainer" parent="Container" unique_id=338165371]
+layout_mode = 2
+size_flags_vertical = 3

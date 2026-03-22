@@ -1,78 +1,11 @@
-[gd_scene format=3 uid="uid://6trcy8p7ik7m"]
+[gd_scene format=3 uid="uid://cuiqn14hl4rt8"]
 
-[node name="Main" type="Control" unique_id=1460058314]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="PackedScene" uid="uid://dtaqx4b7qx7gp" path="res://Scenes/UI/HUD.tscn" id="1_37xw0"]
+[ext_resource type="PackedScene" uid="uid://6trcy8p7ik7m" path="res://Scenes/UI/MenuManager.tscn" id="2_ereyx"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=618991188]
+[node name="Ui" type="CanvasLayer" unique_id=1121390421]
 
-[node name="Home" type="VBoxContainer" parent="CanvasLayer" unique_id=1720736479]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -49.5
-offset_top = -33.0
-offset_right = 49.5
-offset_bottom = 33.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Play" type="Button" parent="CanvasLayer/Home" unique_id=1982047351]
-layout_mode = 2
-text = "Play"
-
-[node name="Leaderboard" type="Button" parent="CanvasLayer/Home" unique_id=1274775820]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "High Scores"
-
-[node name="Exit" type="Button" parent="CanvasLayer/Home" unique_id=423680403]
-layout_mode = 2
-text = "Exit"
-
-[node name="Leaderboard" type="VBoxContainer" parent="CanvasLayer" unique_id=1342610422]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Play" type="VBoxContainer" parent="CanvasLayer" unique_id=18443864]
+[node name="Hud" parent="." unique_id=1581275617 instance=ExtResource("1_37xw0")]
 visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
 
-[node name="One" type="Button" parent="CanvasLayer/Play" unique_id=2061543709]
-layout_mode = 2
-text = "Level 1"
-
-[node name="Two" type="Button" parent="CanvasLayer/Play" unique_id=304732130]
-layout_mode = 2
-text = "Level 2"
-
-[node name="Three" type="Button" parent="CanvasLayer/Play" unique_id=294489466]
-layout_mode = 2
-text = "Level 3"
+[node name="MenuManager" parent="." unique_id=1460058314 instance=ExtResource("2_ereyx")]

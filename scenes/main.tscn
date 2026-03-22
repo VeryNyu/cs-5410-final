@@ -2,11 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://cirgelblwe0u7" path="res://Scenes/Scenery/scenery.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://dsteavlr2tly6" path="res://Scenes/Player/player.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://cuiqn14hl4rt8" path="res://Scenes/UI/main.tscn" id="3_8gbba"]
 
 [node name="Main" type="Node2D" unique_id=103568734]
 metadata/_edit_vertical_guides_ = [3584.0, 3272.0, 3485.0]
-metadata/_edit_horizontal_guides_ = [256.0]
 
 [node name="Scenery" parent="." unique_id=1333351965 instance=ExtResource("1_jjgbg")]
+visible = false
 
 [node name="Player" parent="." unique_id=1695953942 instance=ExtResource("2_bo1nx")]
+visible = false
+
+[node name="Ui" parent="." unique_id=549655737 instance=ExtResource("3_8gbba")]
