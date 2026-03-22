@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed(key: String) -> void:
 	match key:
-		"Play": Change.emit("Level")
-		"Leaderboard": Change.emit("Leaderboard")
-		"Exit": get_tree().quit()
+		"One": print("Level Select (One) Reporting " + key)
+		"Two": print("Level Select (Two) Reporting " + key)
+		"Three": print("Level Select (Three) Reporting " + key)
+		"Back": Change.emit("Start")

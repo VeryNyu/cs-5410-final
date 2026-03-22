@@ -29,14 +29,14 @@ grow_vertical = 2
 layout_mode = 2
 text = "Play"
 
-[node name="Level" type="Button" parent="VBoxContainer" unique_id=1834969894]
+[node name="Leaderboard" type="Button" parent="VBoxContainer" unique_id=1834969894]
 layout_mode = 2
-text = "Level Select"
+text = "Leaderboard"
 
 [node name="Exit" type="Button" parent="VBoxContainer" unique_id=1751541993]
 layout_mode = 2
 text = "Exit"
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_button_pressed" binds= ["Play"]]
-[connection signal="pressed" from="VBoxContainer/Level" to="." method="_on_button_pressed" binds= ["Level"]]
+[connection signal="pressed" from="VBoxContainer/Leaderboard" to="." method="_on_button_pressed" binds= ["Leaderboard"]]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_button_pressed" binds= ["Exit"]]
