@@ -15,4 +15,4 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed(key: String) -> void:
 	match key:
-		"Back": Change.emit("Start")
+		"Back": Change.emit("Back")

@@ -1,5 +1,6 @@
 extends Control
 
+signal Level_Selected
 signal Change
 
 
@@ -14,8 +15,7 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed(key: String) -> void:
+	print("Level Select Sending Signal: " + key)
 	match key:
-		"One": print("Level Select (One) Reporting " + key)
-		"Two": print("Level Select (Two) Reporting " + key)
-		"Three": print("Level Select (Three) Reporting " + key)
-		"Back": Change.emit("Start")
+		["One", "Two", "Three"]: Level_Selected.emit(key)
+		"Back": Change.emit("Back")

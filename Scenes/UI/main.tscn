@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://cuiqn14hl4rt8"]
 
 [ext_resource type="PackedScene" uid="uid://dtaqx4b7qx7gp" path="res://Scenes/UI/HUD.tscn" id="1_37xw0"]
+[ext_resource type="Script" uid="uid://csrdeo7llqhqj" path="res://Scripts/UI/main.gd" id="1_ereyx"]
 [ext_resource type="PackedScene" uid="uid://6trcy8p7ik7m" path="res://Scenes/UI/MenuManager.tscn" id="2_ereyx"]
 
-[node name="Ui" type="CanvasLayer" unique_id=1121390421]
+[node name="UI" type="Node2D" unique_id=1159870980]
+script = ExtResource("1_ereyx")
 
-[node name="Hud" parent="." unique_id=1581275617 instance=ExtResource("1_37xw0")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1121390421]
+
+[node name="Hud" parent="CanvasLayer" unique_id=1581275617 instance=ExtResource("1_37xw0")]
 visible = false
 
-[node name="MenuManager" parent="." unique_id=1460058314 instance=ExtResource("2_ereyx")]
+[node name="MenuManager" parent="CanvasLayer" unique_id=1460058314 instance=ExtResource("2_ereyx")]
+
+[connection signal="Game_Start" from="CanvasLayer/MenuManager" to="." method="_on_game_start"]
