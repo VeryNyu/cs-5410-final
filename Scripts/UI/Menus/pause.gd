@@ -14,6 +14,12 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed(key: String) -> void:
 	match key:
-		"Restart": print("Pause (Restart) Reporting " + key)
-		"Level": Change.emit("Level")
+		"Restart":
+			print("Pause (Restart) Reporting " + key)
+		"Level":
+			Change.emit("Level")
+			return
 		"Main": Change.emit("Start")
+
+	get_tree().paused = false
+	hide()

@@ -13,9 +13,15 @@ func _ready() -> void:
 	}
 	current_state = STATES["Start"]
 
-func _process(delta: float) -> void:
+
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
-		_menu_change("Pause")
+		if get_tree().paused:
+			get_tree().paused = false
+			$Pause.hide()
+		else:
+			get_tree().paused = true
+			_menu_change("Pause")
 
 
 func _on_signal(key: String) -> void:
