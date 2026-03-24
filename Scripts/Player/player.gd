@@ -11,7 +11,6 @@ func _ready() -> void:
 	screen_size = get_viewport_rect().size
 
 func _physics_process(delta: float) -> void:
-	
 	# Add the gravity.
 	if not is_on_floor():
 		$AnimatedSprite2D.play("double_jump")

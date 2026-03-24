@@ -8,9 +8,7 @@
 metadata/_edit_vertical_guides_ = [3584.0, 3272.0, 3485.0]
 
 [node name="Scenery" parent="." unique_id=1333351965 instance=ExtResource("1_jjgbg")]
-visible = false
 
 [node name="Player" parent="." unique_id=1695953942 instance=ExtResource("2_bo1nx")]
-visible = false
 
 [node name="Ui" parent="." unique_id=549655737 instance=ExtResource("3_8gbba")]

@@ -8,9 +8,14 @@ func _ready() -> void:
 	STATES = {
 		"Start": get_node("Start"),
 		"Level": get_node("LevelSelect"),
-		"Leaderboard": get_node("Leaderboard")
+		"Leaderboard": get_node("Leaderboard"),
+		"Pause": get_node("Pause")
 	}
 	current_state = STATES["Start"]
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		_menu_change("Pause")
 
 
 func _on_signal(key: String) -> void:
