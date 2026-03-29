@@ -27,17 +27,15 @@ func _process(_delta: float) -> void:
 		get_tree().paused = paused
 
 
-func _on_signal(key: String) -> void:
+func _on_signal_change(key: String) -> void:
 	print()
 	
 	match key:
 		"Start":
-			print("Menu Manager(Start) Reporting: " + key)
+			print(current_state.name + "-> Start Reporting: " + key)
 		"Level":
-			print("Menu Manager(Level) Reporting: " + key)
-		["One", "Two", "Three"]:
-			Game_Start.emit(key)
-		"Leaderboard": print("Menu Manager(Leaderboard) Reporting: " + key)
+			print(current_state.name + "-> Level Reporting: " + key)
+		"Leaderboard": print(current_state.name + "-> Leaderboard Reporting: " + key)
 		"Back": key = last_state.name
 		_: print("Menu Manager(Default) Reporting: " + key)
 	
@@ -55,3 +53,10 @@ func _menu_change(key: String) -> void:
 	current_state.visible = false
 	current_state = STATES[key]
 	current_state.visible = true
+
+
+func _on_level_selected(key: String) -> void:
+	print("Menu Manager(Number) Reporting: " + key)
+	current_state.visible = false
+	Game_Start.emit(key)
+	$LevelManager.change_level(key)

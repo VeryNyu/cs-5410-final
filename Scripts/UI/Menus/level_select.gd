@@ -15,7 +15,8 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed(key: String) -> void:
-	print("Level Select Sending Signal: " + key)
 	match key:
-		["One", "Two", "Three"]: Level_Selected.emit(key)
+		"One", "Two", "Three":
+			print("Level Select Sending Signal: " + key)
+			Level_Selected.emit(key)
 		"Back": Change.emit("Back")
