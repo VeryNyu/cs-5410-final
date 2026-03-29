@@ -12,7 +12,6 @@ script = ExtResource("1_ereyx")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1121390421]
 
 [node name="Hud" parent="CanvasLayer" unique_id=1581275617 instance=ExtResource("1_37xw0")]
-visible = false
 
 [node name="MenuManager" parent="CanvasLayer" unique_id=1460058314 instance=ExtResource("2_ereyx")]
 
