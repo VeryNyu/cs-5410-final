@@ -1,10 +1,7 @@
 extends Node2D
 
-var START
-
 func _ready() -> void:
-	START = $Ui/CanvasLayer/MenuManager
-	#START.Game_Start.connect(_on_game_start(START.key))
+	pass
 
 
 func _on_game_start(key: String) -> void:
