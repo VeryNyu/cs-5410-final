@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://dsf0278rtqx76" path="res://Scenes/UI/Menus/start.tscn" id="1_461o4"]
 [ext_resource type="Script" uid="uid://du68cwjcob5i5" path="res://Scripts/UI/menu_manager.gd" id="1_v2q0d"]
 [ext_resource type="PackedScene" uid="uid://d27k1rpj82c4p" path="res://Scenes/UI/Menus/levelSelect.tscn" id="2_mnsdd"]
-[ext_resource type="PackedScene" uid="uid://bmce67241nwio" path="res://Scenes/Environment/LevelManager.tscn" id="2_pvpam"]
 [ext_resource type="PackedScene" uid="uid://doqccvf570odg" path="res://Scenes/UI/Menus/leaderboard.tscn" id="3_mnsdd"]
 [ext_resource type="PackedScene" uid="uid://brvlurixwouun" path="res://Scenes/UI/Menus/pause.tscn" id="5_7ds3q"]
 
@@ -16,8 +15,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v2q0d")
-
-[node name="LevelManager" parent="." unique_id=125164802 instance=ExtResource("2_pvpam")]
 
 [node name="Start" parent="." unique_id=915505992 instance=ExtResource("1_461o4")]
 layout_mode = 1

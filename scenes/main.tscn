@@ -1,18 +1,20 @@
 [gd_scene format=3 uid="uid://clrrof301ec72"]
 
-[ext_resource type="PackedScene" uid="uid://cirgelblwe0u7" path="res://Scenes/Environment/scenery.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://cgw17qqggdduq" path="res://Scripts/main.gd" id="1_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://dsteavlr2tly6" path="res://Scenes/Player/player.tscn" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://cuiqn14hl4rt8" path="res://Scenes/UI/UI.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://bmce67241nwio" path="res://Scenes/Environment/LevelManager.tscn" id="3_jjvhh"]
 
 [node name="Main" type="Node2D" unique_id=103568734]
 script = ExtResource("1_jjvhh")
 metadata/_edit_vertical_guides_ = [3584.0, 3272.0, 3485.0]
 
-[node name="Scenery" parent="." unique_id=1333351965 instance=ExtResource("1_jjgbg")]
+[node name="LevelManager" parent="." unique_id=125164802 instance=ExtResource("3_jjvhh")]
 
 [node name="Player" parent="." unique_id=1695953942 instance=ExtResource("2_bo1nx")]
+position = Vector2(28.999998, 93.99999)
 
 [node name="Ui" parent="." unique_id=549655737 instance=ExtResource("3_8gbba")]
+visible = false
 
 [connection signal="Game_Start" from="Ui" to="." method="_on_game_start"]

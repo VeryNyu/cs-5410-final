@@ -9,6 +9,7 @@ func _ready() -> void:
 
 func _on_game_start(key: String) -> void:
 	print("Main Root (Game Start) Reporting: " + key)
+	$LevelManager.change_level(key)
 	
 	match key:
 		"One": print("Level One Chosen")

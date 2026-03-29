@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	# Clamp the position between top-left (0,0) and bottom-right (screen_size)
-	position.x = clamp(position.x, 0, 3272)
-	position.y = clamp(position.y, 0, screen_size.y)
+	#position.x = clamp(position.x, 0, 3272)
+	#position.y = clamp(position.y, 0, screen_size.y)
 
 	move_and_slide()

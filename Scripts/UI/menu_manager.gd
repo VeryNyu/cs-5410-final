@@ -3,8 +3,8 @@ extends Control
 signal Game_Start
 
 var STATES: Dictionary
-var current_state: Node
-var last_state: Node
+var current_state: Control
+var last_state: Control
 var paused: bool = false
 
 
@@ -59,4 +59,3 @@ func _on_level_selected(key: String) -> void:
 	print("Menu Manager(Number) Reporting: " + key)
 	current_state.visible = false
 	Game_Start.emit(key)
-	$LevelManager.change_level(key)

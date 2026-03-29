@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://csrdeo7llqhqj" path="res://Scripts/UI/ui.gd" id="1_ereyx"]
 [ext_resource type="PackedScene" uid="uid://6trcy8p7ik7m" path="res://Scenes/UI/MenuManager.tscn" id="2_ereyx"]
 
-[node name="UI" type="Node2D" unique_id=1159870980]
+[node name="UI" type="Control" unique_id=462124386]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_ereyx")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1121390421]
