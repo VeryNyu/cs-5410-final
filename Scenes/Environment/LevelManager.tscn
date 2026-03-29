@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bmce67241nwio"]
+
+[ext_resource type="Script" uid="uid://c7kntw6in2rle" path="res://Scripts/Scenery/level_manager.gd" id="1_dchpr"]
+[ext_resource type="PackedScene" uid="uid://obxpxqf5evem" path="res://Scenes/Environment/Levels/One.tscn" id="2_x6i6a"]
+[ext_resource type="PackedScene" uid="uid://dtultj761sxgq" path="res://Scenes/Environment/Levels/Two.tscn" id="3_6d45x"]
+[ext_resource type="PackedScene" uid="uid://d2mnmkoy1i0in" path="res://Scenes/Environment/Levels/Three.tscn" id="4_520hr"]
+
+[node name="LevelManager" type="Node2D" unique_id=125164802]
+script = ExtResource("1_dchpr")
+
+[node name="One" parent="." unique_id=1251516790 instance=ExtResource("2_x6i6a")]
+
+[node name="Two" parent="." unique_id=229839122 instance=ExtResource("3_6d45x")]
+
+[node name="Three" parent="." unique_id=672102810 instance=ExtResource("4_520hr")]
