@@ -10,13 +10,14 @@ func _ready() -> void:
 		"Two": get_node("Two"),
 		"Three": get_node("Three")
 	}
-	
-	current_level = LEVELS["Three"]
+	for level in LEVELS.values(): level.collision_enabled = false
 
 func change_level(key: String):
 	current_level.visible = false
+	current_level.collision_enabled = false
 	current_level = LEVELS[key]
 	current_level.visible = true
+	current_level.collision_enabled = true
 	
 	match key:
 		"One": print("Level Manager Reporting Level: " + key)
