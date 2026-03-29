@@ -157,7 +157,7 @@ texture = ExtResource("1_wk71s")
 19:2/0/terrain_set = 0
 
 [resource]
-physics_layer_0/collision_layer = 2
+physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Overworld"
 terrain_set_0/terrain_0/color = Color(0.20491293, 0.43705422, 0.36041677, 1)

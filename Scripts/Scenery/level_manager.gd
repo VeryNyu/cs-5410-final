@@ -11,6 +11,9 @@ func _ready() -> void:
 		"Three": get_node("Three")
 	}
 	for level in LEVELS.values(): level.collision_enabled = false
+	current_level = LEVELS["One"]
+	
+	$One.collision_enabled = true		# INITIATING FOR TESTING. REMOVE WHEN DONE.
 
 func change_level(key: String):
 	current_level.visible = false

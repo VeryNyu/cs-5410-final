@@ -5,7 +5,7 @@ signal Game_Start
 var STATES: Dictionary
 var current_state: Control
 var last_state: Control
-var paused: bool = false
+var paused: bool
 
 
 func _ready() -> void:
@@ -17,14 +17,18 @@ func _ready() -> void:
 	}
 	current_state = STATES["Start"]
 	last_state = STATES["Start"]
+	pause(false)
 
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
-		if paused: $Pause.hide()
-		else: _menu_change("Pause")
-		paused = not paused
-		get_tree().paused = paused
+		pause(true)
+
+func pause(state: bool):
+	if state: _menu_change("Pause")
+	else: $Pause.hide()
+	paused = state
+	get_tree().paused = state
 
 
 func _on_signal_change(key: String) -> void:
@@ -32,20 +36,22 @@ func _on_signal_change(key: String) -> void:
 	
 	match key:
 		"Start":
-			print(current_state.name + "-> Start Reporting: " + key)
+			print(current_state.name + " -> Start Reporting: " + key)
 		"Level":
-			print(current_state.name + "-> Level Reporting: " + key)
-		"Leaderboard": print(current_state.name + "-> Leaderboard Reporting: " + key)
+			print(current_state.name + " -> Level Reporting: " + key)
+		"Leaderboard": print(current_state.name + " -> Leaderboard Reporting: " + key)
 		"Back": key = last_state.name
 		_: print("Menu Manager(Default) Reporting: " + key)
 	
 	_menu_change(key)
+
 
 func _on_game_start(key: String) -> void:
 	print(key + " Signal Reached Manager, Forwarding to UI")
 	Game_Start.emit(key)
 	$Pause.level = key
 	current_state.visible = false
+
 
 func _menu_change(key: String) -> void:
 	last_state = current_state

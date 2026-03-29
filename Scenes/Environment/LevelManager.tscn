@@ -507,7 +507,6 @@ anchors_preset = 0
 script = ExtResource("1_dchpr")
 
 [node name="One" parent="." unique_id=496805213 instance=ExtResource("2_x6i6a")]
-visible = false
 tile_set = SubResource("TileSet_ig78n")
 
 [node name="Two" parent="." unique_id=1027343712 instance=ExtResource("3_x6i6a")]
