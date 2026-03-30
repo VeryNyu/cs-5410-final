@@ -8,8 +8,10 @@
 [node name="Main" type="Node2D" unique_id=1159866571]
 script = ExtResource("1_rgh2o")
 
-[node name="UI" parent="." unique_id=462124386 instance=ExtResource("2_pbw6q")]
-
 [node name="Player" parent="." unique_id=1695953942 instance=ExtResource("3_v1gob")]
 
+[node name="UI" parent="." unique_id=462124386 instance=ExtResource("2_pbw6q")]
+
 [node name="LevelManager" parent="." unique_id=92544580 instance=ExtResource("4_jw32o")]
+
+[connection signal="Game_Start" from="UI" to="." method="_on_game_start"]

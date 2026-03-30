@@ -2,6 +2,15 @@ extends Control
 
 signal Change
 
+func TEST():
+	print("TIMES:")
+	for t in SaveLoad.Times:
+		print(t)
+	
+	print("SCORES:")
+	for s in SaveLoad.Scores:
+		print(s)
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

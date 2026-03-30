@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://doqccvf570odg"]
 
 [ext_resource type="Script" uid="uid://cmdiwfbjfmxwt" path="res://Scripts/UI/Menus/leaderboard.gd" id="1_vhe4f"]
+[ext_resource type="PackedScene" uid="uid://0xyo5ckyx7ga" path="res://TEMPFILES/TESTSAVE.tscn" id="2_yd2sq"]
+[ext_resource type="PackedScene" uid="uid://4uyl52p8prr4" path="res://TEMPFILES/TESTLOAD.tscn" id="3_gd78q"]
+[ext_resource type="PackedScene" uid="uid://b7uti1m45pmaq" path="res://TEMPFILES/TESTNUKE.tscn" id="4_gd78q"]
 
 [node name="Leaderboard" type="Control" unique_id=1694604272]
 layout_mode = 3
@@ -147,4 +150,17 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 text = "Back"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="Container" unique_id=1086098430]
+layout_mode = 2
+
+[node name="Testsave" parent="Container/HBoxContainer" unique_id=1626288087 instance=ExtResource("2_yd2sq")]
+layout_mode = 2
+
+[node name="Testload" parent="Container/HBoxContainer" unique_id=2113339886 instance=ExtResource("3_gd78q")]
+layout_mode = 2
+
+[node name="Testnuke" parent="Container/HBoxContainer" unique_id=2076090550 instance=ExtResource("4_gd78q")]
+layout_mode = 2
+
 [connection signal="pressed" from="Container/Back" to="." method="_on_button_pressed" binds= ["Back"]]
+[connection signal="pressed" from="Container/HBoxContainer/Testload" to="." method="TEST"]
