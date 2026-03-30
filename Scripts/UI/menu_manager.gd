@@ -49,7 +49,6 @@ func _on_signal_change(key: String) -> void:
 func _on_game_start(key: String) -> void:
 	print(key + " Signal Reached Manager, Forwarding to UI")
 	Game_Start.emit(key)
-	$Pause.level = key
 	current_state.visible = false
 
 

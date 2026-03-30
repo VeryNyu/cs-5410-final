@@ -17,6 +17,7 @@ func _ready() -> void:
 	$One.collision_enabled = true		# INITIATING FOR TESTING. REMOVE WHEN DONE.
 
 func change_level(key: String):
+	if key == "": return
 	current_level.visible = false
 	current_level.collision_enabled = false
 	current_level = LEVELS[key]
