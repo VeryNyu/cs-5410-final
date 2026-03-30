@@ -10,6 +10,7 @@ func _ready() -> void:
 		"Two": get_node("Two"),
 		"Three": get_node("Three")
 	}
+	SaveLoad.load_scores(LEVELS.size())
 	for level in LEVELS.values(): level.collision_enabled = false
 	current_level = LEVELS["One"]
 	

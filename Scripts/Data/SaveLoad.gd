@@ -20,7 +20,6 @@ var ScoreSaveSchema: Dictionary = {
 
 
 func _ready() -> void:
-	load_scores()
 	pass
 	#for i in range(5):		# CAN AUTOMATE INDEX PER LEVEL COUNT
 		#Times[i] = []
@@ -50,6 +49,7 @@ func _update_saved(list: Dictionary, level: int, data: Dictionary):
 	list.get_or_add(level, [])
 	list[level].append(data)
 	_trim_data("time", Times[level])
+	_trim_data("score", Scores[level])
 	
 
 
@@ -66,7 +66,11 @@ func _trim_data(type: String, list: Array):
 	if list.size() > 5: list.resize(5)
 
 
-func load_scores():
+func load_scores(min_saves: int):
+	for i in range(min_saves):
+		Times[i] = []
+		Scores[i] = []
+	
 	_load_helper(Times, TIMEPATH)
 	_load_helper(Scores, SCOREPATH)
 	
@@ -76,7 +80,6 @@ func load_scores():
 func _load_helper(list: Dictionary, path: String):
 	if FileAccess.file_exists(path):
 		file = FileAccess.open(path, FileAccess.READ)
-		#print(file.get_var())
 		var temp_data: Dictionary = file.get_var()
 		file.close()
 		
@@ -88,6 +91,8 @@ func _load_helper(list: Dictionary, path: String):
 func clear_scores():
 	Times.clear()
 	Scores.clear()
+	_save(Times, TIMEPATH)
+	_save(Scores, SCOREPATH)
 
 
 func _format_time(total_seconds: float) -> String:

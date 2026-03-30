@@ -39,7 +39,7 @@ func _on_signal_change(key: String) -> void:
 			print(current_state.name + " -> Start Reporting: " + key)
 		"Level":
 			print(current_state.name + " -> Level Reporting: " + key)
-		"Leaderboard": print(current_state.name + " -> Leaderboard Reporting: " + key)
+		"Leaderboard": $Leaderboard.display()
 		"Back": key = last_state.name
 		_: print("Menu Manager(Default) Reporting: " + key)
 	

@@ -162,5 +162,9 @@ layout_mode = 2
 [node name="Testnuke" parent="Container/HBoxContainer" unique_id=2076090550 instance=ExtResource("4_gd78q")]
 layout_mode = 2
 
+[connection signal="pressed" from="Container/Title/Level/Left" to="." method="_on_nav_pressed" binds= ["Left"]]
+[connection signal="pressed" from="Container/Title/Level/Right" to="." method="_on_nav_pressed" binds= ["Right"]]
 [connection signal="pressed" from="Container/Back" to="." method="_on_button_pressed" binds= ["Back"]]
+[connection signal="pressed" from="Container/HBoxContainer/Testsave" to="." method="TEST"]
 [connection signal="pressed" from="Container/HBoxContainer/Testload" to="." method="TEST"]
+[connection signal="pressed" from="Container/HBoxContainer/Testnuke" to="." method="TEST"]
