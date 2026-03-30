@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cgqwiffau5iet"]
 
-[ext_resource type="Texture2D" uid="uid://dis4uvu113mxk" path="res://Assets/Items/Checkpoints/Checkpoint/Checkpoint (Flag Out) (64x64).png" id="3_awb1r"]
-[ext_resource type="Texture2D" uid="uid://d0v3yd62n8r4c" path="res://Assets/Items/Checkpoints/Checkpoint/Checkpoint (Flag Idle)(64x64).png" id="4_rwb5t"]
-[ext_resource type="Texture2D" uid="uid://b20bvwo8j05vr" path="res://Assets/Items/Checkpoints/Checkpoint/Checkpoint (No Flag).png" id="5_xqycs"]
+[ext_resource type="Texture2D" uid="uid://dis4uvu113mxk" path="res://Assets/Art/Items/Checkpoints/Checkpoint/Checkpoint (Flag Out) (64x64).png" id="3_awb1r"]
+[ext_resource type="Texture2D" uid="uid://d0v3yd62n8r4c" path="res://Assets/Art/Items/Checkpoints/Checkpoint/Checkpoint (Flag Idle)(64x64).png" id="4_rwb5t"]
+[ext_resource type="Texture2D" uid="uid://b20bvwo8j05vr" path="res://Assets/Art/Items/Checkpoints/Checkpoint/Checkpoint (No Flag).png" id="5_xqycs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3co3y"]
 atlas = ExtResource("3_awb1r")

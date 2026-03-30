@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://chdap0hw4okjn"]
 
-[ext_resource type="Texture2D" uid="uid://c16dwjijiruhj" path="res://Assets/Items/Checkpoints/Start/Start (Moving) (64x64).png" id="1_sxmyu"]
-[ext_resource type="Texture2D" uid="uid://cu4qakgdeslpi" path="res://Assets/Items/Checkpoints/Start/Start (Idle).png" id="2_cegfo"]
+[ext_resource type="Texture2D" uid="uid://c16dwjijiruhj" path="res://Assets/Art/Items/Checkpoints/Start/Start (Moving) (64x64).png" id="1_sxmyu"]
+[ext_resource type="Texture2D" uid="uid://cu4qakgdeslpi" path="res://Assets/Art/Items/Checkpoints/Start/Start (Idle).png" id="2_cegfo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3x3td"]
 atlas = ExtResource("1_sxmyu")

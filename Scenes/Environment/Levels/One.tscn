@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://obxpxqf5evem"]
 
-[ext_resource type="TileSet" uid="uid://chfaft1hf8noy" path="res://Assets/Terrain/Overworld.tres" id="1_6x6o5"]
+[ext_resource type="TileSet" uid="uid://chfaft1hf8noy" path="res://Assets/Art/Terrain/Overworld.tres" id="1_6x6o5"]
 
 [node name="One" type="TileMapLayer" unique_id=496805213]
 z_as_relative = false
