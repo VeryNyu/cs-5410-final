@@ -10,48 +10,47 @@ var Scores: Dictionary
 
 var TimeSaveSchema: Dictionary = {
 	"tag": "TAG",
-	"level": 0,
 	"time": "0.0"
 }
 
 var ScoreSaveSchema: Dictionary = {
 	"tag": "TAG",
-	"level": 0,
 	"score": 0
 }
 
 
 func _ready() -> void:
+	load_scores()
+	pass
 	#for i in range(5):		# CAN AUTOMATE INDEX PER LEVEL COUNT
 		#Times[i] = []
 		#Scores[i] = []
-	load_scores()
+
 
 func save_scores(tag: String, level: int, score: int, time: float):
 	var time_string = _format_time(time)
-	var time_data = _save_helper(TimeSaveSchema, tag, level, "time", time_string)
-	if Times.is_empty():
-		var temp_list: Array
-		temp_list.append(time_data)
-		Times[level] = temp_list
-	else:
-		Times[level] = time_data
-	_trim_data("time", Times[level])
+	var time_schema = _save_helper(TimeSaveSchema, tag, "time", time_string)
+	_update_saved(Times, level, time_schema)
 	_save(Times, TIMEPATH)
 	
-	var score_data = _save_helper(ScoreSaveSchema, tag, level, "score", score)
-	Scores[level].append(score_data)
-	_trim_data("score", Scores[level])
+	var score_schema = _save_helper(ScoreSaveSchema, tag, "score", score)
+	_update_saved(Scores, level, score_schema)
 	_save(Scores, SCOREPATH)
 
 
-func _save_helper(schema: Dictionary, tag: String, level: int, key: String, value):
+func _save_helper(schema: Dictionary, tag: String, key: String, value):
 	var temp_schema: Dictionary = schema.duplicate()
 	
 	temp_schema["tag"] = tag
-	temp_schema["level"] = level
 	temp_schema[key] = value
 	return temp_schema
+
+
+func _update_saved(list: Dictionary, level: int, data: Dictionary):
+	list.get_or_add(level, [])
+	list[level].append(data)
+	_trim_data("time", Times[level])
+	
 
 
 func _save(data: Dictionary, path: String):
@@ -88,9 +87,7 @@ func _load_helper(list: Dictionary, path: String):
 
 func clear_scores():
 	Times.clear()
-	_save({}, TIMEPATH)
 	Scores.clear()
-	_save({}, SCOREPATH)
 
 
 func _format_time(total_seconds: float) -> String:

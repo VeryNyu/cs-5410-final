@@ -19,10 +19,8 @@ func TEST():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if page_times:
-		page_times = SaveLoad.Times[page_number]
-	if page_scores:
-		page_scores = SaveLoad.Scores[page_number]
+	page_times = SaveLoad.Times[page_number]
+	page_scores = SaveLoad.Scores[page_number]
 	_display()
 
 

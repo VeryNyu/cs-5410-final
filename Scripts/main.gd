@@ -1,8 +1,8 @@
 extends Node2D
 
 func _ready() -> void:
-	SaveLoad.clear_scores()
 	pass
+	#SaveLoad.load_scores()
 
 
 func _on_game_start(key: String) -> void:
