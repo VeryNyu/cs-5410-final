@@ -59,12 +59,12 @@ grow_vertical = 2
 size_flags_horizontal = 8
 text = ">"
 
-[node name="Scores" type="HBoxContainer" parent="Container" unique_id=1228632389]
+[node name="Display" type="HBoxContainer" parent="Container" unique_id=1228632389]
 layout_mode = 2
 size_flags_vertical = 6
 alignment = 1
 
-[node name="Ranks" type="Label" parent="Container/Scores" unique_id=1168529703]
+[node name="Ranks" type="Label" parent="Container/Display" unique_id=1168529703]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
@@ -75,72 +75,72 @@ text = "1
 5"
 vertical_alignment = 2
 
-[node name="Padding" type="CenterContainer" parent="Container/Scores" unique_id=1534135196]
+[node name="Padding" type="CenterContainer" parent="Container/Display" unique_id=1534135196]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Times" type="VBoxContainer" parent="Container/Scores" unique_id=454519386]
+[node name="time" type="VBoxContainer" parent="Container/Display" unique_id=454519386]
 layout_mode = 2
 size_flags_horizontal = 8
 alignment = 1
 
-[node name="Times" type="Label" parent="Container/Scores/Times" unique_id=116497212]
+[node name="Times" type="Label" parent="Container/Display/time" unique_id=116497212]
 layout_mode = 2
 text = "Times"
 horizontal_alignment = 1
 
-[node name="1" type="Label" parent="Container/Scores/Times" unique_id=1835138862]
+[node name="0" type="Label" parent="Container/Display/time" unique_id=1835138862]
 layout_mode = 2
 text = "FFF: 0:20:25"
 horizontal_alignment = 1
 
-[node name="2" type="Label" parent="Container/Scores/Times" unique_id=154036729]
+[node name="1" type="Label" parent="Container/Display/time" unique_id=154036729]
 layout_mode = 2
 horizontal_alignment = 1
 
-[node name="3" type="Label" parent="Container/Scores/Times" unique_id=1876276603]
+[node name="2" type="Label" parent="Container/Display/time" unique_id=1876276603]
 layout_mode = 2
 horizontal_alignment = 1
 
-[node name="4" type="Label" parent="Container/Scores/Times" unique_id=827438331]
+[node name="3" type="Label" parent="Container/Display/time" unique_id=827438331]
 layout_mode = 2
 horizontal_alignment = 1
 
-[node name="5" type="Label" parent="Container/Scores/Times" unique_id=782606682]
+[node name="4" type="Label" parent="Container/Display/time" unique_id=782606682]
 layout_mode = 2
 horizontal_alignment = 1
 
-[node name="Padding2" type="CenterContainer" parent="Container/Scores" unique_id=918394471]
+[node name="Padding2" type="CenterContainer" parent="Container/Display" unique_id=918394471]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Scores" type="VBoxContainer" parent="Container/Scores" unique_id=1889701042]
+[node name="score" type="VBoxContainer" parent="Container/Display" unique_id=1889701042]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Scores" type="Label" parent="Container/Scores/Scores" unique_id=709595074]
+[node name="Scores" type="Label" parent="Container/Display/score" unique_id=709595074]
 layout_mode = 2
 text = "Scores"
 horizontal_alignment = 1
 
-[node name="1" type="Label" parent="Container/Scores/Scores" unique_id=437495590]
+[node name="0" type="Label" parent="Container/Display/score" unique_id=437495590]
 layout_mode = 2
 text = "QQQ: 420"
 horizontal_alignment = 1
 
-[node name="2" type="Label" parent="Container/Scores/Scores" unique_id=1097819062]
+[node name="1" type="Label" parent="Container/Display/score" unique_id=1097819062]
 layout_mode = 2
 horizontal_alignment = 1
 
-[node name="3" type="Label" parent="Container/Scores/Scores" unique_id=493389294]
+[node name="2" type="Label" parent="Container/Display/score" unique_id=493389294]
 layout_mode = 2
 horizontal_alignment = 1
 
-[node name="4" type="Label" parent="Container/Scores/Scores" unique_id=1116066686]
+[node name="3" type="Label" parent="Container/Display/score" unique_id=1116066686]
 layout_mode = 2
 horizontal_alignment = 1
 
-[node name="5" type="Label" parent="Container/Scores/Scores" unique_id=1474452051]
+[node name="4" type="Label" parent="Container/Display/score" unique_id=1474452051]
 layout_mode = 2
 horizontal_alignment = 1
 

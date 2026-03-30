@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
+	SaveLoad.clear_scores()
 	pass
 
 
