@@ -20,14 +20,13 @@ func _ready() -> void:
 	$One.collision_enabled = true		# INITIATING FOR TESTING. REMOVE WHEN DONE.
 
 func change_level(key: String):
+	show()
 	if key == "": return
 	current_level.visible = false
 	current_level.collision_enabled = false
 	current_level = LEVELS[key]
 	current_level.visible = true
 	current_level.collision_enabled = true
-	
-	show()
 	
 	match key:
 		"One": print("Level Manager Reporting Level: " + key)

@@ -1,6 +1,7 @@
 extends Control
 
 signal Game_Start
+signal Game_Quit
 
 var STATES: Dictionary
 var current_state: Control
@@ -36,7 +37,7 @@ func _on_signal_change(key: String) -> void:
 	
 	match key:
 		"Start":
-			print(current_state.name + " -> Start Reporting: " + key)
+			Game_Quit.emit()
 		"Level":
 			print(current_state.name + " -> Level Reporting: " + key)
 		"Leaderboard": $Leaderboard.display()

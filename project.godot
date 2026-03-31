@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SaveLoad="*uid://pqy6ir2p7fxx"
+Config="*uid://cu31t8jux32ua"
 
 [display]
 

@@ -18,4 +18,5 @@ script = ExtResource("1_ereyx")
 
 [node name="MenuManager" parent="CanvasLayer" unique_id=1460058314 instance=ExtResource("2_ereyx")]
 
+[connection signal="Game_Quit" from="CanvasLayer/MenuManager" to="." method="_on_game_quit"]
 [connection signal="Game_Start" from="CanvasLayer/MenuManager" to="." method="_on_game_start"]
