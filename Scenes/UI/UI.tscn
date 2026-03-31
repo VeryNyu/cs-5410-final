@@ -3,11 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://dtaqx4b7qx7gp" path="res://Scenes/UI/HUD.tscn" id="1_37xw0"]
 [ext_resource type="Script" uid="uid://csrdeo7llqhqj" path="res://Scripts/UI/ui.gd" id="1_ereyx"]
 [ext_resource type="PackedScene" uid="uid://6trcy8p7ik7m" path="res://Scenes/UI/MenuManager.tscn" id="2_ereyx"]
+[ext_resource type="PackedScene" uid="uid://b05vhur4r81tp" path="res://Scenes/Environment/Backdrop/Backdrop.tscn" id="4_b83rk"]
 
 [node name="UI" type="Control" unique_id=462124386]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_ereyx")
+
+[node name="Backdrop" parent="." unique_id=968579230 instance=ExtResource("4_b83rk")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1121390421]
 

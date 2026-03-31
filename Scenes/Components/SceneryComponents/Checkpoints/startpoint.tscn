@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://chdap0hw4okjn"]
 
 [ext_resource type="Texture2D" uid="uid://c16dwjijiruhj" path="res://Assets/Art/Items/Checkpoints/Start/Start (Moving) (64x64).png" id="1_sxmyu"]
-[ext_resource type="Texture2D" uid="uid://cu4qakgdeslpi" path="res://Assets/Art/Items/Checkpoints/Start/Start (Idle).png" id="2_cegfo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd2k4"]
+atlas = ExtResource("1_sxmyu")
+region = Rect2(896, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pl8j5"]
+atlas = ExtResource("1_sxmyu")
+region = Rect2(960, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3x3td"]
 atlas = ExtResource("1_sxmyu")
@@ -59,25 +66,15 @@ region = Rect2(768, 0, 64, 64)
 atlas = ExtResource("1_sxmyu")
 region = Rect2(832, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dd2k4"]
-atlas = ExtResource("1_sxmyu")
-region = Rect2(896, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pl8j5"]
-atlas = ExtResource("1_sxmyu")
-region = Rect2(960, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kbhik"]
-atlas = ExtResource("1_sxmyu")
-region = Rect2(1024, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_16clo"]
-atlas = ExtResource("2_cegfo")
-region = Rect2(0, 0, 64, 64)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_1wd2u"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dd2k4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pl8j5")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3x3td")
 }, {
@@ -119,31 +116,21 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ufrs3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dd2k4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pl8j5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kbhik")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 25.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_16clo")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
 }]
 
-[node name="Startpoint" type="Node2D" unique_id=658095606]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njf1c"]
+size = Vector2(34, 8)
+
+[node name="Startpoint" type="AnimatableBody2D" unique_id=1637682820]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1055063550]
 sprite_frames = SubResource("SpriteFrames_1wd2u")
-autoplay = "idle"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=584976904]
+position = Vector2(11, 28)
+shape = SubResource("RectangleShape2D_njf1c")

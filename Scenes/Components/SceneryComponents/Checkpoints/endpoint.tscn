@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://bflnt6r1rinst"]
 
 [ext_resource type="Texture2D" uid="uid://diujwpdvn5wel" path="res://Assets/Art/Items/Checkpoints/End/End (Pressed) (64x64).png" id="1_e1iw3"]
-[ext_resource type="Texture2D" uid="uid://ced5tacnnj4hw" path="res://Assets/Art/Items/Checkpoints/End/End (Idle).png" id="2_nhlxh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oga6k"]
+atlas = ExtResource("1_e1iw3")
+region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ec0i7"]
 atlas = ExtResource("1_e1iw3")
@@ -31,17 +34,12 @@ region = Rect2(320, 0, 64, 64)
 atlas = ExtResource("1_e1iw3")
 region = Rect2(384, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oga6k"]
-atlas = ExtResource("1_e1iw3")
-region = Rect2(448, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7ueu8"]
-atlas = ExtResource("2_nhlxh")
-region = Rect2(0, 0, 64, 64)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_tbecf"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oga6k")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ec0i7")
 }, {
@@ -62,26 +60,14 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_c2252")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oga6k")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 25.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7ueu8")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
 }]
 
 [node name="Endpoint" type="Node2D" unique_id=620650196]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1142466026]
 sprite_frames = SubResource("SpriteFrames_tbecf")
-animation = &"idle"
-autoplay = "idle"
+autoplay = "default"

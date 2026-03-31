@@ -1,5 +1,7 @@
 extends Control
 
+
+var score: int = 0
 var time_elapsed: float = 0.0
 var is_stopped: bool = false
 

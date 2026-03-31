@@ -2,16 +2,16 @@
 
 [ext_resource type="Script" uid="uid://cgw17qqggdduq" path="res://Scripts/main.gd" id="1_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://cuiqn14hl4rt8" path="res://Scenes/UI/UI.tscn" id="2_pbw6q"]
-[ext_resource type="PackedScene" uid="uid://dsteavlr2tly6" path="res://Scenes/Player/player.tscn" id="3_v1gob"]
 [ext_resource type="PackedScene" uid="uid://bmce67241nwio" path="res://Scenes/Environment/LevelManager.tscn" id="4_jw32o"]
 
 [node name="Main" type="Node2D" unique_id=1159866571]
 script = ExtResource("1_rgh2o")
-
-[node name="Player" parent="." unique_id=1695953942 instance=ExtResource("3_v1gob")]
+metadata/_edit_vertical_guides_ = [37.0]
+metadata/_edit_horizontal_guides_ = [201.0]
 
 [node name="UI" parent="." unique_id=462124386 instance=ExtResource("2_pbw6q")]
 
 [node name="LevelManager" parent="." unique_id=92544580 instance=ExtResource("4_jw32o")]
 
 [connection signal="Game_Start" from="UI" to="." method="_on_game_start"]
+[connection signal="Goal" from="LevelManager" to="." method="_on_goal"]

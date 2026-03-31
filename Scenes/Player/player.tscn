@@ -155,3 +155,4 @@ position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_tugb3")
 
 [node name="Camera" parent="." unique_id=1169797830 instance=ExtResource("4_mtuoh")]
+limit_enabled = true
