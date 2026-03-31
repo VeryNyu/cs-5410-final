@@ -16,8 +16,8 @@ func _on_game_start(key: String) -> void:
 	
 	match key:
 		"One": level = 0
-		"Two": print("Level One Chosen")
-		"Three": print("Level One Chosen")
+		"Two": level = 1
+		"Three": level = 2
 		"Restart": print("Level One Chosen")
 		_: print("Defaulted Game Start")
 	

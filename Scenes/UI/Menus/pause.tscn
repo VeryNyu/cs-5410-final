@@ -26,6 +26,10 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
+[node name="Continue" type="Button" parent="VBoxContainer" unique_id=2089206589]
+layout_mode = 2
+text = "Continue"
+
 [node name="Restart" type="Button" parent="VBoxContainer" unique_id=458608244]
 layout_mode = 2
 text = "Restart"
@@ -38,6 +42,7 @@ text = "Level"
 layout_mode = 2
 text = "Main Menu"
 
+[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_button_pressed" binds= ["Continue"]]
 [connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_button_pressed" binds= ["Restart"]]
 [connection signal="pressed" from="VBoxContainer/Level" to="." method="_on_button_pressed" binds= ["Level"]]
 [connection signal="pressed" from="VBoxContainer/Main" to="." method="_on_button_pressed" binds= ["Main"]]

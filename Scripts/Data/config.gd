@@ -9,14 +9,14 @@ var DATA: Dictionary = {
 		}]
 	},
 	1: {
-		"PlayerSpawnPoint": Vector2i(),
+		"PlayerSpawnPoint": Vector2i(26, 177),
 		"EnemySpawnPoints": [{
 			"Type": "",
 			"SpawnPoint": Vector2i()
 		}]
 	},
 	2: {
-		"PlayerSpawnPoint": Vector2i(),
+		"PlayerSpawnPoint": Vector2i(37, 101),
 		"EnemySpawnPoints": [{
 			"Type": "",
 			"SpawnPoint": Vector2i()

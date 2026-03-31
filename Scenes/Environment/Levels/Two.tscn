@@ -10,6 +10,7 @@ tile_map_data = PackedByteArray("AAAAAA0AAAAGAAQAAAAAAA4AAAAGAAUAAAAAAA8AAAAGAAY
 tile_set = ExtResource("1_hqo70")
 
 [node name="Underworld" parent="." unique_id=1282576031 instance=ExtResource("2_6tx0i")]
+visible = false
 position = Vector2(0, -240)
 
 [node name="Startpoint" parent="." unique_id=1637682820 instance=ExtResource("2_u4klj")]

@@ -7,7 +7,7 @@
 [node name="Main" type="Node2D" unique_id=1159866571 groups=["Entities"]]
 script = ExtResource("1_rgh2o")
 metadata/_edit_vertical_guides_ = [37.0]
-metadata/_edit_horizontal_guides_ = [201.0]
+metadata/_edit_horizontal_guides_ = [101.0]
 
 [node name="UI" parent="." unique_id=462124386 instance=ExtResource("2_pbw6q")]
 

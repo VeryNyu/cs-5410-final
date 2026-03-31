@@ -36,8 +36,11 @@ func _on_signal_change(key: String) -> void:
 	print()
 	
 	match key:
-		"Start":
-			Game_Quit.emit()
+		"Continue":
+			get_tree().paused = false
+			current_state.visible = false
+			return
+		"Start": Game_Quit.emit()
 		"Level":
 			print(current_state.name + " -> Level Reporting: " + key)
 		"Leaderboard": $Leaderboard.display()
