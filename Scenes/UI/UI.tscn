@@ -11,6 +11,7 @@ anchors_preset = 0
 script = ExtResource("1_ereyx")
 
 [node name="Backdrop" parent="." unique_id=968579230 instance=ExtResource("4_b83rk")]
+autoscroll = Vector2(-20, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1121390421]
 

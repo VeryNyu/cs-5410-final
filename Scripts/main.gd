@@ -9,6 +9,8 @@ func _ready() -> void:
 
 
 func _on_game_start(key: String) -> void:
+	if player:
+		player.queue_free()
 	print("Main Root (Game Start) Reporting: " + key)
 	$LevelManager.change_level(key)
 	
@@ -25,12 +27,13 @@ func _on_game_start(key: String) -> void:
 
 
 func _on_game_quit() -> void:
+	get_tree().paused = false
 	$LevelManager.hide()
 	$UI/CanvasLayer/Hud.hide()
 	player.queue_free()
-	pass
-
 
 func _on_goal() -> void:
 	$UI/CanvasLayer/Hud.stop()
-	pass # Replace with function body.
+	var score: String = $UI/CanvasLayer/Hud/Score/Score.text
+	var time: String = $UI/CanvasLayer/Hud/Time/Time.text
+	SaveLoad.save_scores("???", level, score, time)

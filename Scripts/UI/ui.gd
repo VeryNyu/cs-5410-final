@@ -27,7 +27,7 @@ func _on_game_quit() -> void:
 
 
 func _draw_background():
-	pattern = tileset.get_pattern(randi_range(0, 7))
-	for x in range(0, 64, 4):
-		for y in range(0, 64, 4):
+	pattern = tileset.get_pattern(randi_range(0, 6))
+	for x in range(-4, 64, 4):
+		for y in range(-4, 64, 4):
 			layer.set_pattern(Vector2i(x, y), pattern)

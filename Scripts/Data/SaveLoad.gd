@@ -26,13 +26,13 @@ func _ready() -> void:
 		#Scores[i] = []
 
 
-func save_scores(tag: String, level: int, score: int, time: float):
+func save_scores(tag: String, level: int, score: String, time: String):
 	var time_string = _format_time(time)
 	var time_schema = _save_helper(TimeSaveSchema, tag, "time", time_string)
 	_update_saved(Times, level, time_schema)
 	_save(Times, TIMEPATH)
 	
-	var score_schema = _save_helper(ScoreSaveSchema, tag, "score", score)
+	var score_schema = _save_helper(ScoreSaveSchema, tag, "score", int(score))
 	_update_saved(Scores, level, score_schema)
 	_save(Scores, SCOREPATH)
 
@@ -95,10 +95,11 @@ func clear_scores():
 	_save(Scores, SCOREPATH)
 
 
-func _format_time(total_seconds: float) -> String:
-	# Calculate components
-	var seconds: float = fmod(total_seconds, 60.0)
-	var minutes: int = int(total_seconds / 60.0) % 60
+func _format_time(time_string: String) -> String:
+	var total_seconds: float = float(time_string)
 
-	# Format with leading zeros: %02d (2-digit int), %05.2f (float, 5 total, 2 decimal)
-	return "%02d:%05.2f" % [minutes, seconds]
+	var minutes: int = int(total_seconds / 60.0)
+	var seconds: int = int(total_seconds) % 60
+	var milliseconds: int = int((total_seconds - int(total_seconds)) * 1000)
+
+	return "%02d:%02d.%02d" % [minutes, seconds, milliseconds]

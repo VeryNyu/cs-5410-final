@@ -179,8 +179,8 @@ pattern_5 = SubResource("TileMapPattern_jys6c")
 pattern_6 = SubResource("TileMapPattern_euoft")
 
 [node name="Parallax" type="Parallax2D" unique_id=968579230]
+process_mode = 1
 repeat_size = Vector2(64, 0)
-autoscroll = Vector2(-20, 0)
 metadata/_edit_vertical_guides_ = [640.0]
 metadata/_edit_horizontal_guides_ = [360.0]
 
