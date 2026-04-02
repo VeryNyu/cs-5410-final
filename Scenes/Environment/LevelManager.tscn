@@ -1,14 +1,11 @@
 [gd_scene format=4 uid="uid://bmce67241nwio"]
 
 [ext_resource type="Script" uid="uid://c7kntw6in2rle" path="res://Scripts/Environment/level_manager.gd" id="1_dchpr"]
-[ext_resource type="PackedScene" uid="uid://obxpxqf5evem" path="res://Scenes/Environment/Levels/One.tscn" id="2_x6i6a"]
+[ext_resource type="PackedScene" uid="uid://obxpxqf5evem" path="res://scenes/Environment/Levels/One.tscn" id="2_x6i6a"]
 [ext_resource type="Texture2D" uid="uid://ck0m83nyiw5bw" path="res://Assets/Art/Terrain/Terrain (16x16).png" id="3_6d45x"]
-[ext_resource type="PackedScene" uid="uid://dtultj761sxgq" path="res://Scenes/Environment/Levels/Two.tscn" id="3_x6i6a"]
-[ext_resource type="PackedScene" uid="uid://d2mnmkoy1i0in" path="res://Scenes/Environment/Levels/Three.tscn" id="4_6d45x"]
+[ext_resource type="PackedScene" uid="uid://dtultj761sxgq" path="res://scenes/Environment/Levels/Two.tscn" id="3_x6i6a"]
+[ext_resource type="PackedScene" uid="uid://d2mnmkoy1i0in" path="res://scenes/Environment/Levels/Three.tscn" id="4_6d45x"]
 [ext_resource type="Script" uid="uid://dd3olombg3xaj" path="res://Scripts/Environment/EnvironmentComponents/level.gd" id="5_a22gx"]
-[ext_resource type="PackedScene" uid="uid://1a4dd4mylup8" path="res://TEMPFILES/OVERWORLD.tscn" id="7_1ff8u"]
-[ext_resource type="PackedScene" uid="uid://betvoavu3pcn8" path="res://TEMPFILES/DUNGEON.tscn" id="8_3t41j"]
-[ext_resource type="PackedScene" uid="uid://w3tpk63v3sh6" path="res://TEMPFILES/UNDERWORLD.tscn" id="9_yklr0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j1058"]
 texture = ExtResource("3_6d45x")
@@ -357,17 +354,9 @@ tile_set = SubResource("TileSet_a22gx")
 script = ExtResource("5_a22gx")
 
 [node name="Three" parent="." unique_id=1708197542 instance=ExtResource("4_6d45x")]
+visible = false
 tile_set = SubResource("TileSet_3t41j")
 script = ExtResource("5_a22gx")
-
-[node name="Overworld" parent="." unique_id=1189731256 instance=ExtResource("7_1ff8u")]
-visible = false
-
-[node name="Dungeon" parent="." unique_id=2044854636 instance=ExtResource("8_3t41j")]
-visible = false
-
-[node name="Underworld" parent="." unique_id=1282576031 instance=ExtResource("9_yklr0")]
-visible = false
 
 [connection signal="Goal" from="One" to="." method="_on_goal"]
 [connection signal="Goal" from="Two" to="." method="_on_goal"]

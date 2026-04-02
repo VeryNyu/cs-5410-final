@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cec3ruwrtrikh"]
+
+[ext_resource type="Script" uid="uid://catryhpvi1ono" path="res://Scripts/Enemies/BaseEnemy.cs" id="1_rxugn"]
+[ext_resource type="Script" uid="uid://u85jqtfla0k2" path="res://Scripts/Enemies/BehaviorManager.cs" id="2_5igq7"]
+[ext_resource type="Script" uid="uid://3kcgswmoupyl" path="res://Scripts/Enemies/States/Idle.cs" id="3_rxugn"]
+[ext_resource type="Script" uid="uid://dqw3kdaegohyk" path="res://Scripts/Enemies/States/Chase.cs" id="5_b8hq3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rxugn"]
+resource_local_to_scene = true
+radius = 150.0
+
+[node name="Enemy" type="CharacterBody2D" unique_id=236515003]
+script = ExtResource("1_rxugn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2049654916]
+animation = &""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1862290795]
+
+[node name="PlayerDetectionZone" type="Area2D" parent="." unique_id=354440217]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionZone" unique_id=1520305643]
+shape = SubResource("CircleShape2D_rxugn")
+
+[node name="LedgeRayCast" type="RayCast2D" parent="." unique_id=940675478]
+position = Vector2(15, 0)
+target_position = Vector2(0, 20)
+
+[node name="WallRayCast" type="RayCast2D" parent="." unique_id=1322159748]
+target_position = Vector2(20, 0)
+
+[node name="BehaviorManager" type="Node" parent="." unique_id=640706303]
+script = ExtResource("2_5igq7")
+
+[node name="Idle" type="Node" parent="BehaviorManager" unique_id=729406740]
+script = ExtResource("3_rxugn")
+
+[node name="Chase" type="Node" parent="BehaviorManager" unique_id=1750349612]
+script = ExtResource("5_b8hq3")
+
+[connection signal="body_entered" from="PlayerDetectionZone" to="." method="_on_player_detection_zone_body_entered"]
+[connection signal="body_exited" from="PlayerDetectionZone" to="." method="_on_player_detection_zone_body_exited"]
