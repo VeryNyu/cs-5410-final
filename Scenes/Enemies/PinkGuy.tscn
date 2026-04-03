@@ -1,0 +1,208 @@
+[gd_scene format=3 uid="uid://8cm3m4mg0uvj"]
+
+[ext_resource type="PackedScene" uid="uid://cec3ruwrtrikh" path="res://scenes/Enemies/Enemy.tscn" id="1_t7icg"]
+[ext_resource type="Script" uid="uid://d3r66nthmod0q" path="res://Scripts/Enemies/PinkGuy.cs" id="2_0ojln"]
+[ext_resource type="Texture2D" uid="uid://cksv02rmbnbon" path="res://Assets/Art/Main Characters/Pink Man/Idle (32x32).png" id="2_npusq"]
+[ext_resource type="Texture2D" uid="uid://b4f54f70yd8lc" path="res://Assets/Art/Main Characters/Pink Man/Run (32x32).png" id="3_0ojln"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1ln3"]
+atlas = ExtResource("2_npusq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1m03"]
+atlas = ExtResource("2_npusq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60nar"]
+atlas = ExtResource("2_npusq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydvfh"]
+atlas = ExtResource("2_npusq")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hu2i2"]
+atlas = ExtResource("2_npusq")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0m3b"]
+atlas = ExtResource("2_npusq")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q05dy"]
+atlas = ExtResource("2_npusq")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8k7cn"]
+atlas = ExtResource("2_npusq")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bg6mi"]
+atlas = ExtResource("2_npusq")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ko4qb"]
+atlas = ExtResource("2_npusq")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usrl6"]
+atlas = ExtResource("2_npusq")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l47ls"]
+atlas = ExtResource("3_0ojln")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_waahi"]
+atlas = ExtResource("3_0ojln")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8ghy"]
+atlas = ExtResource("3_0ojln")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkthv"]
+atlas = ExtResource("3_0ojln")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnjub"]
+atlas = ExtResource("3_0ojln")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vcjm"]
+atlas = ExtResource("3_0ojln")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbrrj"]
+atlas = ExtResource("3_0ojln")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvmui"]
+atlas = ExtResource("3_0ojln")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhtlv"]
+atlas = ExtResource("3_0ojln")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6gq5"]
+atlas = ExtResource("3_0ojln")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3iuub"]
+atlas = ExtResource("3_0ojln")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfq4y"]
+atlas = ExtResource("3_0ojln")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bwu8x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1ln3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1m03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60nar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydvfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hu2i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0m3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q05dy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8k7cn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bg6mi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ko4qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usrl6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l47ls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_waahi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8ghy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkthv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnjub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vcjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbrrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvmui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhtlv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6gq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3iuub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfq4y")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_npusq"]
+radius = 8.0
+height = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ojln"]
+resource_local_to_scene = true
+radius = 150.0
+
+[node name="PinkGuy" unique_id=236515003 instance=ExtResource("1_t7icg")]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("2_0ojln")
+MoveSpeed = 30.0
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=2049654916]
+position = Vector2(0, -4)
+sprite_frames = SubResource("SpriteFrames_bwu8x")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1862290795]
+shape = SubResource("CapsuleShape2D_npusq")
+
+[node name="CollisionShape2D" parent="PlayerDetectionZone" parent_id_path=PackedInt32Array(354440217) index="0" unique_id=1520305643]
+shape = SubResource("CircleShape2D_0ojln")
+
+[node name="BehaviorManager" parent="." index="5" unique_id=640706303]
+InitialStateName = "Idle"

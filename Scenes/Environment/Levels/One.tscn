@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://chdap0hw4okjn" path="res://scenes/Components/SceneryComponents/Checkpoints/startpoint.tscn" id="2_giu24"]
 [ext_resource type="Script" uid="uid://dd3olombg3xaj" path="res://Scripts/Environment/EnvironmentComponents/level.gd" id="2_w4plm"]
 [ext_resource type="PackedScene" uid="uid://cgqwiffau5iet" path="res://scenes/Components/SceneryComponents/Checkpoints/checkpoint.tscn" id="3_jxq0j"]
-[ext_resource type="PackedScene" uid="uid://d5r0qiim3yua" path="res://scenes/Enemies/NinjaFrog.tscn" id="5_qu8b5"]
 
 [node name="One" type="TileMapLayer" unique_id=496805213]
 z_as_relative = false
@@ -17,8 +16,5 @@ position = Vector2(26, 177)
 
 [node name="Checkpoint" parent="." unique_id=1312576257 instance=ExtResource("3_jxq0j")]
 position = Vector2(3184, 33)
-
-[node name="NinjaFrog" parent="." unique_id=236515003 instance=ExtResource("5_qu8b5")]
-position = Vector2(380, 112)
 
 [connection signal="body_entered" from="Checkpoint" to="." method="_on_checkpoint_body_entered"]

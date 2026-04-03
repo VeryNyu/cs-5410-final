@@ -7,11 +7,11 @@ public partial class NinjaFrog : BaseEnemy
         // If he sees you, he chases you. If he doesn't, he patrols. Simple and clean!
         if (PlayerTarget != null)
         {
-            BehaviorManager.ChangeState("Chase");
+            BehaviorManager.ChangeState("JumpingChase");
         }
         else
         {
-            BehaviorManager.ChangeState("Idle");
+            BehaviorManager.ChangeState("JumpingIdle");
         }
     }
 }

@@ -2,37 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://cec3ruwrtrikh" path="res://scenes/Enemies/Enemy.tscn" id="1_tniwi"]
 [ext_resource type="Script" uid="uid://bk4hepo3watwv" path="res://Scripts/Enemies/NinjaFrog.cs" id="2_jrdps"]
-[ext_resource type="Texture2D" uid="uid://bagnlgqvgbwxh" path="res://Assets/Art/Main Characters/Ninja Frog/Hit (32x32).png" id="2_lhs1m"]
 [ext_resource type="Texture2D" uid="uid://bhli345e831km" path="res://Assets/Art/Main Characters/Ninja Frog/Idle (32x32).png" id="2_t1s5w"]
-[ext_resource type="Texture2D" uid="uid://ug0h6ey7tkku" path="res://Assets/Art/Main Characters/Ninja Frog/Run (32x32).png" id="3_lhs1m"]
+[ext_resource type="Texture2D" uid="uid://m7arii1jebd4" path="res://Assets/Art/Main Characters/Ninja Frog/Fall (32x32).png" id="3_tg3yi"]
+[ext_resource type="Texture2D" uid="uid://ca0dhtib5fly0" path="res://Assets/Art/Main Characters/Ninja Frog/Jump (32x32).png" id="6_273j6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_asmna"]
-atlas = ExtResource("2_lhs1m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_16yws"]
+atlas = ExtResource("3_tg3yi")
 region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o7s4k"]
-atlas = ExtResource("2_lhs1m")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d8vgh"]
-atlas = ExtResource("2_lhs1m")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kbjcf"]
-atlas = ExtResource("2_lhs1m")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_utt4m"]
-atlas = ExtResource("2_lhs1m")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n2kfo"]
-atlas = ExtResource("2_lhs1m")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gdy7w"]
-atlas = ExtResource("2_lhs1m")
-region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jrdps"]
 atlas = ExtResource("2_t1s5w")
@@ -78,80 +54,18 @@ region = Rect2(288, 0, 32, 32)
 atlas = ExtResource("2_t1s5w")
 region = Rect2(320, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2w6dt"]
-atlas = ExtResource("3_lhs1m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6mjs"]
+atlas = ExtResource("6_273j6")
 region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6pcgf"]
-atlas = ExtResource("3_lhs1m")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kgi5a"]
-atlas = ExtResource("3_lhs1m")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0kymo"]
-atlas = ExtResource("3_lhs1m")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qme2t"]
-atlas = ExtResource("3_lhs1m")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_in7im"]
-atlas = ExtResource("3_lhs1m")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q4syx"]
-atlas = ExtResource("3_lhs1m")
-region = Rect2(192, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hhkxk"]
-atlas = ExtResource("3_lhs1m")
-region = Rect2(224, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kdo1y"]
-atlas = ExtResource("3_lhs1m")
-region = Rect2(256, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6nruf"]
-atlas = ExtResource("3_lhs1m")
-region = Rect2(288, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8ld18"]
-atlas = ExtResource("3_lhs1m")
-region = Rect2(320, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6q8ud"]
-atlas = ExtResource("3_lhs1m")
-region = Rect2(352, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_asmna"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_asmna")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o7s4k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d8vgh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kbjcf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_utt4m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n2kfo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gdy7w")
+"texture": SubResource("AtlasTexture_16yws")
 }],
 "loop": true,
-"name": &"hit",
+"name": &"fall",
 "speed": 5.0
 }, {
 "frames": [{
@@ -194,43 +108,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2w6dt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6pcgf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kgi5a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0kymo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qme2t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_in7im")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q4syx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hhkxk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kdo1y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6nruf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8ld18")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6q8ud")
+"texture": SubResource("AtlasTexture_a6mjs")
 }],
 "loop": true,
-"name": &"run",
+"name": &"jump",
 "speed": 5.0
 }]
 
@@ -240,17 +121,19 @@ height = 24.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jrdps"]
 resource_local_to_scene = true
-radius = 150.0
+radius = 100.0
 
 [node name="NinjaFrog" unique_id=236515003 instance=ExtResource("1_tniwi")]
+scale = Vector2(0.75, 0.75)
 script = ExtResource("2_jrdps")
+MoveSpeed = 90.0
+ChaseSpeed = 120.0
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=2049654916]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_asmna")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.460242
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1862290795]
 shape = SubResource("CapsuleShape2D_o7s4k")
@@ -262,4 +145,4 @@ shape = SubResource("CircleShape2D_jrdps")
 position = Vector2(0, 10)
 
 [node name="BehaviorManager" parent="." index="5" unique_id=640706303]
-InitialStateName = "Idle"
+InitialStateName = "JumpingIdle"

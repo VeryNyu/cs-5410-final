@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://u85jqtfla0k2" path="res://Scripts/Enemies/BehaviorManager.cs" id="2_5igq7"]
 [ext_resource type="Script" uid="uid://3kcgswmoupyl" path="res://Scripts/Enemies/States/Idle.cs" id="3_rxugn"]
 [ext_resource type="Script" uid="uid://dqw3kdaegohyk" path="res://Scripts/Enemies/States/Chase.cs" id="5_b8hq3"]
+[ext_resource type="Script" uid="uid://coupro44wtvd" path="res://Scripts/Enemies/States/JumpingIdle.cs" id="5_rxugn"]
+[ext_resource type="Script" uid="uid://c461rlh3pkyob" path="res://Scripts/Enemies/States/JumpingChase.cs" id="6_5igq7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rxugn"]
 resource_local_to_scene = true
@@ -37,6 +39,15 @@ script = ExtResource("3_rxugn")
 
 [node name="Chase" type="Node" parent="BehaviorManager" unique_id=1750349612]
 script = ExtResource("5_b8hq3")
+
+[node name="JumpingIdle" type="Node" parent="BehaviorManager" unique_id=2080761633]
+script = ExtResource("5_rxugn")
+
+[node name="JumpingChase" type="Node" parent="BehaviorManager" unique_id=1308982107]
+script = ExtResource("6_5igq7")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1751419554]
+rect = Rect2(-150, -150, 300, 300)
 
 [connection signal="body_entered" from="PlayerDetectionZone" to="." method="_on_player_detection_zone_body_entered"]
 [connection signal="body_exited" from="PlayerDetectionZone" to="." method="_on_player_detection_zone_body_exited"]
