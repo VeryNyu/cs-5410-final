@@ -16,6 +16,8 @@
 [ext_resource type="Script" uid="uid://bs223vurj2uhk" path="res://Scripts/Player/States/PlayerWallSlide.cs" id="14_1bwnf"]
 [ext_resource type="Script" uid="uid://bbxq81181otge" path="res://Scripts/Player/States/PlayerDoubleJump.cs" id="14_t6q27"]
 [ext_resource type="Script" uid="uid://cu5pbdmgunwr" path="res://Scripts/Player/States/PlayerWallJump.cs" id="15_tayva"]
+[ext_resource type="PackedScene" uid="uid://c83jph27j3326" path="res://scenes/Components/hurtbox.tscn" id="17_x8khf"]
+[ext_resource type="PackedScene" uid="uid://dbe88gt4adpop" path="res://scenes/Components/hitbox.tscn" id="18_aciub"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_06tpx"]
 atlas = ExtResource("2_xpcdj")
@@ -305,13 +307,21 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tugb3"]
 height = 22.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x8khf"]
+radius = 10.857142
+height = 23.14
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aciub"]
+radius = 5.7142878
+height = 14.285721
+
 [node name="Player" type="CharacterBody2D" unique_id=1695953942 groups=["Player"]]
 scale = Vector2(0.7, 0.7)
 script = ExtResource("1_wwtew")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=85044737]
 sprite_frames = SubResource("SpriteFrames_06tpx")
-animation = &"double_jump"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1364292054]
@@ -345,3 +355,24 @@ script = ExtResource("15_tayva")
 
 [node name="DoubleJump" type="Node" parent="StateMachine" unique_id=1244910313]
 script = ExtResource("14_t6q27")
+
+[node name="PlayerHurtbox" parent="." unique_id=747945340 instance=ExtResource("17_x8khf")]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="PlayerHurtbox" index="0" unique_id=709159978]
+position = Vector2(0, 1.4285715)
+shape = SubResource("CapsuleShape2D_x8khf")
+
+[node name="PlayerHitbox" parent="." unique_id=853586366 instance=ExtResource("18_aciub")]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="PlayerHitbox" index="0" unique_id=1679217]
+position = Vector2(-1.8474107e-14, 10)
+rotation = 1.5707964
+scale = Vector2(0.9999996, 0.9999996)
+shape = SubResource("CapsuleShape2D_aciub")
+
+[editable path="PlayerHurtbox"]
+[editable path="PlayerHitbox"]

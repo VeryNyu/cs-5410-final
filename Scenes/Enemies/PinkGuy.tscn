@@ -187,6 +187,14 @@ height = 24.0
 resource_local_to_scene = true
 radius = 150.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ojln"]
+radius = 3.0
+height = 10.666667
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l1m03"]
+radius = 9.333334
+height = 25.33
+
 [node name="PinkGuy" unique_id=236515003 instance=ExtResource("1_t7icg")]
 scale = Vector2(0.75, 0.75)
 script = ExtResource("2_0ojln")
@@ -206,3 +214,18 @@ shape = SubResource("CircleShape2D_0ojln")
 
 [node name="BehaviorManager" parent="." index="5" unique_id=640706303]
 InitialStateName = "Idle"
+
+[node name="VisibleOnScreenEnabler2D" parent="." index="6" unique_id=1751419554]
+position = Vector2(-5.3333335, -1.3333334)
+
+[node name="CollisionShape2D" parent="EnemyHurtbox" parent_id_path=PackedInt32Array(747945340) index="0" unique_id=709159978]
+position = Vector2(-3.523108e-14, -12)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_0ojln")
+
+[node name="CollisionShape2D" parent="EnemyHitbox" parent_id_path=PackedInt32Array(853586366) index="0" unique_id=1679217]
+position = Vector2(0, 0.667)
+shape = SubResource("CapsuleShape2D_l1m03")
+
+[editable path="EnemyHurtbox"]
+[editable path="EnemyHitbox"]

@@ -20,8 +20,12 @@ public partial class Chase : State
         {
             Vector2 direction = (Enemy.PlayerTarget.GlobalPosition - Enemy.GlobalPosition).Normalized();
 
-            // Tell the Base Enemy to face the player (-1 for left, 1 for right)
-            int faceDir = direction.X < 0 ? -1 : 1;
+            float xDifference = Enemy.PlayerTarget.GlobalPosition.X - Enemy.GlobalPosition.X;
+            int faceDir = Enemy.FacingDirection;
+
+            if (xDifference < -2.0f) faceDir = -1;
+            else if (xDifference > 2.0f) faceDir = 1;
+
             Enemy.UpdateFacingDirection(faceDir);
 
             RayCast2D ledgeChecker = Enemy.GetNode<RayCast2D>("LedgeRayCast");
@@ -31,7 +35,12 @@ public partial class Chase : State
             bool isStuck = Mathf.Abs(Enemy.GetRealVelocity().X) < 5.0f;
 
             Vector2 velocity = Enemy.Velocity;
-            if (hitLedge || hitWall)
+            if (Mathf.Abs(xDifference) <= 2.0f)
+            {
+                velocity.X = 0;
+                Enemy.Sprite.Play("idle");
+            } 
+            else if (hitLedge || hitWall)
             {
                 velocity.X = 0;
                 Enemy.Sprite.Play("idle");

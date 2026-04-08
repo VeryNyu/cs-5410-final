@@ -6,6 +6,10 @@
 [ext_resource type="Script" uid="uid://dqw3kdaegohyk" path="res://Scripts/Enemies/States/Chase.cs" id="5_b8hq3"]
 [ext_resource type="Script" uid="uid://coupro44wtvd" path="res://Scripts/Enemies/States/JumpingIdle.cs" id="5_rxugn"]
 [ext_resource type="Script" uid="uid://c461rlh3pkyob" path="res://Scripts/Enemies/States/JumpingChase.cs" id="6_5igq7"]
+[ext_resource type="PackedScene" uid="uid://c83jph27j3326" path="res://scenes/Components/hurtbox.tscn" id="7_b8hq3"]
+[ext_resource type="PackedScene" uid="uid://dbe88gt4adpop" path="res://scenes/Components/hitbox.tscn" id="8_62mwk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b8hq3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rxugn"]
 resource_local_to_scene = true
@@ -15,7 +19,7 @@ radius = 150.0
 script = ExtResource("1_rxugn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2049654916]
-animation = &""
+sprite_frames = SubResource("SpriteFrames_b8hq3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1862290795]
 
@@ -49,5 +53,16 @@ script = ExtResource("6_5igq7")
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1751419554]
 rect = Rect2(-150, -150, 300, 300)
 
+[node name="EnemyHurtbox" parent="." unique_id=747945340 instance=ExtResource("7_b8hq3")]
+collision_layer = 4
+collision_mask = 0
+
+[node name="EnemyHitbox" parent="." unique_id=853586366 instance=ExtResource("8_62mwk")]
+collision_layer = 16
+collision_mask = 2
+
 [connection signal="body_entered" from="PlayerDetectionZone" to="." method="_on_player_detection_zone_body_entered"]
 [connection signal="body_exited" from="PlayerDetectionZone" to="." method="_on_player_detection_zone_body_exited"]
+
+[editable path="EnemyHurtbox"]
+[editable path="EnemyHitbox"]

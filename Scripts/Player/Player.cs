@@ -17,6 +17,12 @@ public partial class Player : CharacterBody2D
         Sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         StateMachine = GetNode<PlayerStateMachine>("StateMachine");
         StateMachine.Init(this);
+
+        Hitbox playerHitbox = GetNode<Hitbox>("PlayerHitbox");
+        playerHitbox.AreaEntered += OnPlayerHitboxAreaEntered;
+
+        Hurtbox playerHurtbox = GetNode<Hurtbox>("PlayerHurtbox");
+        playerHurtbox.DamageTaken += OnDamageTaken;
     }
 
     public override void _Process(double delta)
@@ -33,5 +39,29 @@ public partial class Player : CharacterBody2D
 
         StateMachine.PhysicsUpdate(delta);
         MoveAndSlide();
+    }
+
+    private void OnPlayerHitboxAreaEntered(Area2D area)
+    {
+        // Check if the thing we touched is a Hurtbox and belongs to an enemy
+        if (area is Hurtbox hurtbox && hurtbox.Owner != this)
+        {
+            // Give the player their double jump back as a reward for the stomp!
+            CanDoubleJump = true;
+            
+            // Force the state machine back into the Jump state. 
+            // This automatically applies the jump velocity and animation!
+            StateMachine.ChangeState("Jump");
+        }
+    }
+
+    private void OnDamageTaken(int damage)
+    {
+        CallDeferred(MethodName.ReloadLevel);
+    }
+
+    private void ReloadLevel()
+    {
+        GetTree().ReloadCurrentScene();
     }
 }

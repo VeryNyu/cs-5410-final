@@ -123,6 +123,14 @@ height = 24.0
 resource_local_to_scene = true
 radius = 100.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jrdps"]
+radius = 3.0
+height = 10.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_86f14"]
+radius = 3.0
+height = 10.0
+
 [node name="NinjaFrog" unique_id=236515003 instance=ExtResource("1_tniwi")]
 scale = Vector2(0.75, 0.75)
 script = ExtResource("2_jrdps")
@@ -146,3 +154,16 @@ position = Vector2(0, 10)
 
 [node name="BehaviorManager" parent="." index="5" unique_id=640706303]
 InitialStateName = "JumpingIdle"
+
+[node name="CollisionShape2D" parent="EnemyHurtbox" parent_id_path=PackedInt32Array(747945340) index="0" unique_id=709159978]
+position = Vector2(0, -10.667)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_jrdps")
+
+[node name="CollisionShape2D" parent="EnemyHitbox" parent_id_path=PackedInt32Array(853586366) index="0" unique_id=1679217]
+position = Vector2(0, 10)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_86f14")
+
+[editable path="EnemyHurtbox"]
+[editable path="EnemyHitbox"]

@@ -18,6 +18,10 @@ public partial class BaseEnemy : CharacterBody2D
         Sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
         BehaviorManager.Init(this);
+
+        // Make sure "Hurtbox" matches the exact name of the node in your Enemy scene
+        Hurtbox enemyHurtbox = GetNode<Hurtbox>("EnemyHurtbox"); 
+        enemyHurtbox.DamageTaken += OnDamageTaken;
     }
 
     public override void _PhysicsProcess(double delta)
@@ -34,6 +38,13 @@ public partial class BaseEnemy : CharacterBody2D
         BehaviorManager.PhysicsUpdate(delta);
 
         MoveAndSlide();
+    }
+
+    private void OnDamageTaken(int damage)
+    {
+        // Mario style: instant death!
+        // Later we can replace this with a poof animation or sound effect
+        CallDeferred(MethodName.QueueFree);
     }
 
     public int FacingDirection { get; private set; } = 1;
