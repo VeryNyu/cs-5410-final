@@ -9,6 +9,8 @@ public partial class Player : CharacterBody2D
     [Export] public float JumpVelocity { get; set; } = -300.0f;
     public float Gravity { get; private set; } = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
     public bool CanDoubleJump { get; set; } = true;
+    [Export] public float WallSlideSpeed { get; set; } = 50.0f;
+    [Export] public Vector2 WallJumpVelocity { get; set; } = new Vector2(250.0f, -300.0f);
 
     public override void _Ready()
     {
@@ -28,7 +30,7 @@ public partial class Player : CharacterBody2D
         {
             CanDoubleJump = true;
         }
-        
+
         StateMachine.PhysicsUpdate(delta);
         MoveAndSlide();
     }

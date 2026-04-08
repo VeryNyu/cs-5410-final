@@ -13,7 +13,9 @@
 [ext_resource type="Script" uid="uid://brarrfu548tgw" path="res://Scripts/Player/States/PlayerRun.cs" id="11_7tfl1"]
 [ext_resource type="Script" uid="uid://2tfm2hs8tbmk" path="res://Scripts/Player/States/PlayerJump.cs" id="12_jxtnq"]
 [ext_resource type="Script" uid="uid://d4bhnd27s52r3" path="res://Scripts/Player/States/PlayerFall.cs" id="13_t6q27"]
+[ext_resource type="Script" uid="uid://bs223vurj2uhk" path="res://Scripts/Player/States/PlayerWallSlide.cs" id="14_1bwnf"]
 [ext_resource type="Script" uid="uid://bbxq81181otge" path="res://Scripts/Player/States/PlayerDoubleJump.cs" id="14_t6q27"]
+[ext_resource type="Script" uid="uid://cu5pbdmgunwr" path="res://Scripts/Player/States/PlayerWallJump.cs" id="15_tayva"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_06tpx"]
 atlas = ExtResource("2_xpcdj")
@@ -336,8 +338,10 @@ script = ExtResource("12_jxtnq")
 script = ExtResource("13_t6q27")
 
 [node name="WallSlide" type="Node" parent="StateMachine" unique_id=944131505]
+script = ExtResource("14_1bwnf")
 
 [node name="WallJump" type="Node" parent="StateMachine" unique_id=313588979]
+script = ExtResource("15_tayva")
 
 [node name="DoubleJump" type="Node" parent="StateMachine" unique_id=1244910313]
 script = ExtResource("14_t6q27")

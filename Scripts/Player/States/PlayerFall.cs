@@ -35,6 +35,12 @@ public partial class PlayerFall : PlayerState
             velocity.X = Mathf.MoveToward(velocity.X, 0, PlayerNode.Speed);
         }
 
+        if (PlayerNode.IsOnWall() && direction != 0)
+        {
+            StateMachine.ChangeState("WallSlide");
+            return;
+        }
+
         PlayerNode.Velocity = velocity;
 
         // Check if we hit the ground
