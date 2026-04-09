@@ -12,6 +12,7 @@ public partial class Player : CharacterBody2D
     private bool _isInvincible = false;
     private double _invincibilityTimer = 0.0;
     [Export] public float InvincibilityDuration { get; set; } = 2.0f; // 2 seconds of protection
+    private ShaderMaterial _spriteMaterial;
     public bool IsKnockedBack { get; set; } = false;
 
     [Export] public float Speed { get; set; } = 200.0f;
@@ -37,6 +38,8 @@ public partial class Player : CharacterBody2D
 
         Hurtbox playerHurtbox = GetNode<Hurtbox>("PlayerHurtbox");
         playerHurtbox.DamageTaken += OnDamageTaken;
+
+        _spriteMaterial = Sprite.Material as ShaderMaterial;
         GroundCheck = GetNode<RayCast2D>("GroundCheck");
 
 
@@ -74,44 +77,39 @@ public partial class Player : CharacterBody2D
         {
             _invincibilityTimer -= delta;
 
-            // Flash effect: switch between red and normal every 0.1 seconds
-            if (Mathf.PosMod(_invincibilityTimer, 0.2) < 0.1)
-            {
-                Sprite.Modulate = new Color(1, 0, 0, 0.5f); // Red and semi-transparent
-            }
-            else
-            {
-                Sprite.Modulate = new Color(1, 1, 1, 1); // Normal color
-            }
+            // Tell the shader we are invincible (solid red)
+            _spriteMaterial?.SetShaderParameter("is_invincible", true);
 
-            // When the timer hits 0, turn off invincibility and ensure color is normal
             if (_invincibilityTimer <= 0)
             {
                 _isInvincible = false;
-                Sprite.Modulate = new Color(1, 1, 1, 1);
 
-                // Check for overlapping areas and take damage if an enemy Hitbox is found
-                RefreshHurtbox();
+                // Tell the shader exactly when the i-frames ended so it starts the pulse at peak red
+                float currentTime = Time.GetTicksMsec() / 1000.0f;
+                _spriteMaterial?.SetShaderParameter("start_time", currentTime);
+
+                Area2D hurtbox = GetNode<Area2D>("PlayerHurtbox");
+                hurtbox.SetDeferred("monitorable", true);
+                hurtbox.SetDeferred("monitoring", true);
+            }
+        }
+        else
+        {
+            // Turn off invincibility color
+            _spriteMaterial?.SetShaderParameter("is_invincible", false);
+
+            // If health is 1, tell the shader to pulse!
+            if (CurrentHealth == 1)
+            {
+                _spriteMaterial?.SetShaderParameter("is_hurt", true);
+            }
+            else
+            {
+                _spriteMaterial?.SetShaderParameter("is_hurt", false);
             }
         }
 
         StateMachine.Update(delta);
-    }
-
-    private async void RefreshHurtbox()
-    {
-        Area2D hurtbox = GetNode<Area2D>("PlayerHurtbox");
-        
-        // Turn it off safely
-        hurtbox.SetDeferred("monitoring", false);
-        hurtbox.SetDeferred("monitorable", false);
-        
-        // Wait exactly one physics frame for the engine to update
-        await ToSignal(GetTree(), SceneTree.SignalName.PhysicsFrame);
-        
-        // Turn it back on. This forces Godot to check for collisions from scratch!
-        hurtbox.SetDeferred("monitoring", true);
-        hurtbox.SetDeferred("monitorable", true);
     }
 
     public override void _PhysicsProcess(double delta)
@@ -174,6 +172,7 @@ public partial class Player : CharacterBody2D
         if (CurrentHealth <= 0)
         {
             // Out of health, die normally
+            _spriteMaterial?.SetShaderParameter("is_hurt", false);
             CallDeferred(MethodName.EmitDied);
         }
         else
@@ -199,6 +198,12 @@ public partial class Player : CharacterBody2D
     {
         _isInvincible = true;
         _invincibilityTimer = InvincibilityDuration;
+
+        // Turn the hurtbox OFF for the entire duration. 
+        // Enemies will think you physically left their hitbox.
+        Area2D hurtbox = GetNode<Area2D>("PlayerHurtbox");
+        hurtbox.SetDeferred("monitorable", false);
+        hurtbox.SetDeferred("monitoring", false);
     }
 
     private void EmitDied()
