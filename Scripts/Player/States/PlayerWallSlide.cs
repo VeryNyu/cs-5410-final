@@ -2,9 +2,13 @@ using Godot;
 
 public partial class PlayerWallSlide : PlayerState
 {
+    private double detachTimer = 0.0;
+    private float detachTimeLimit = 0.1f;
+
     public override void Enter()
     {
         PlayerNode.Sprite.Play("wall_jump");
+        detachTimer = detachTimeLimit;
     }
 
     public override void PhysicsUpdate(double delta)
@@ -26,12 +30,26 @@ public partial class PlayerWallSlide : PlayerState
             return;
         }
 
+        if (!PlayerNode.CanWallSlide())
+        {
+            StateMachine.ChangeState("Fall");
+            return;
+        }
+
         float direction = Input.GetAxis("move_left", "move_right");
         float wallDirection = PlayerNode.GetWallNormal().X < 0 ? 1 : -1;
 
-        if (!PlayerNode.IsOnWall() || direction != wallDirection)
+        if (direction != wallDirection)
         {
-            StateMachine.ChangeState("Fall");
+            detachTimer -= delta;
+            if (detachTimer <= 0)
+            {
+                StateMachine.ChangeState("Fall");
+            }
+        }
+        else
+        {
+            detachTimer = detachTimeLimit;
         }
     }
 }

@@ -40,11 +40,27 @@ public partial class BaseEnemy : CharacterBody2D
         MoveAndSlide();
     }
 
-    private void OnDamageTaken(int damage)
+    private async void OnDamageTaken(int damage)
     {
-        // Mario style: instant death!
-        // Later we can replace this with a poof animation or sound effect
-        CallDeferred(MethodName.QueueFree);
+        // 1. Stop all movement and state machine logic immediately
+        SetPhysicsProcess(false);
+
+        // 2. Safely disable the damage zones so the dying enemy cannot hurt the player
+        GetNode<Area2D>("EnemyHitbox").SetDeferred("monitorable", false);
+        GetNode<Area2D>("EnemyHitbox").SetDeferred("monitoring", false);
+        GetNode<Area2D>("EnemyHurtbox").SetDeferred("monitorable", false);
+        GetNode<Area2D>("EnemyHurtbox").SetDeferred("monitoring", false);
+
+        GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true);
+
+        // 3. Play the death animation (change "hit" to match your exact animation name)
+        Sprite.Play("hit"); 
+
+        // 4. Wait for the AnimatedSprite2D to finish playing this specific animation
+        await ToSignal(Sprite, AnimatedSprite2D.SignalName.AnimationFinished);
+
+        // 5. Now that the animation is completely over, delete the enemy
+        QueueFree();
     }
 
     public int FacingDirection { get; private set; } = 1;

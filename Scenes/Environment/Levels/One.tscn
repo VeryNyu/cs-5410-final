@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://chdap0hw4okjn" path="res://scenes/Components/SceneryComponents/Checkpoints/startpoint.tscn" id="2_giu24"]
 [ext_resource type="Script" uid="uid://dd3olombg3xaj" path="res://Scripts/Environment/EnvironmentComponents/level.gd" id="2_w4plm"]
 [ext_resource type="PackedScene" uid="uid://cgqwiffau5iet" path="res://scenes/Components/SceneryComponents/Checkpoints/checkpoint.tscn" id="3_jxq0j"]
+[ext_resource type="PackedScene" uid="uid://8cm3m4mg0uvj" path="res://scenes/Enemies/PinkGuy.tscn" id="5_qu8b5"]
+[ext_resource type="PackedScene" uid="uid://d5r0qiim3yua" path="res://scenes/Enemies/NinjaFrog.tscn" id="6_8qcl5"]
 [ext_resource type="PackedScene" uid="uid://dbe88gt4adpop" path="res://scenes/Components/hitbox.tscn" id="7_w3sjr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmtbh"]
@@ -30,6 +32,12 @@ Damage = 5
 [node name="CollisionShape2D" parent="DeathPlane" index="0" unique_id=1679217]
 position = Vector2(920.5, -127)
 shape = SubResource("RectangleShape2D_lmtbh")
+
+[node name="PinkGuy" parent="." unique_id=236515003 instance=ExtResource("5_qu8b5")]
+position = Vector2(372, 183)
+
+[node name="NinjaFrog" parent="." unique_id=1850432431 instance=ExtResource("6_8qcl5")]
+position = Vector2(838, 162)
 
 [connection signal="body_entered" from="Checkpoint" to="." method="_on_checkpoint_body_entered"]
 

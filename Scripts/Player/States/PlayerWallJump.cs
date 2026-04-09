@@ -29,6 +29,15 @@ public partial class PlayerWallJump : PlayerState
 
         velocity.Y += PlayerNode.Gravity * (float)delta;
 
+        // if (Input.IsActionJustPressed("move_jump"))
+        // {
+        //     if (PlayerNode.CanDoubleJump)
+        //     {
+        //         StateMachine.ChangeState("DoubleJump");
+        //         return;
+        //     }
+        // }
+
         float direction = Input.GetAxis("move_left", "move_right");
         if (direction != 0)
         {

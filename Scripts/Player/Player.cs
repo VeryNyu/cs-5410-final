@@ -2,6 +2,9 @@ using Godot;
 
 public partial class Player : CharacterBody2D
 {
+    [Signal]
+    public delegate void DiedEventHandler();
+
     public AnimatedSprite2D Sprite { get; private set; }
     public PlayerStateMachine StateMachine { get; private set; }
 
@@ -11,6 +14,9 @@ public partial class Player : CharacterBody2D
     public bool CanDoubleJump { get; set; } = true;
     [Export] public float WallSlideSpeed { get; set; } = 50.0f;
     [Export] public Vector2 WallJumpVelocity { get; set; } = new Vector2(250.0f, -300.0f);
+    public double CoyoteTimer { get; set; } = 0.0;
+    [Export] public float CoyoteTime { get; set; } = 0.1f;
+    public RayCast2D GroundCheck { get; private set; }
 
     public override void _Ready()
     {
@@ -23,6 +29,7 @@ public partial class Player : CharacterBody2D
 
         Hurtbox playerHurtbox = GetNode<Hurtbox>("PlayerHurtbox");
         playerHurtbox.DamageTaken += OnDamageTaken;
+        GroundCheck = GetNode<RayCast2D>("GroundCheck");
     }
 
     public override void _Process(double delta)
@@ -35,10 +42,35 @@ public partial class Player : CharacterBody2D
         if (IsOnFloor())
         {
             CanDoubleJump = true;
+            CoyoteTimer = CoyoteTime;
+        }
+        else
+        {
+            CoyoteTimer -= delta;
         }
 
         StateMachine.PhysicsUpdate(delta);
         MoveAndSlide();
+    }
+
+    public bool CanWallSlide()
+    {
+        if (!IsOnWall()) return false;
+        
+        if (Velocity.Y < 0) return false;
+
+        if (GroundCheck.IsColliding()) return false;
+
+        // Checks all physical contacts to ensure we are touching a real wall, not an enemy
+        for (int i = 0; i < GetSlideCollisionCount(); i++)
+        {
+            var collider = GetSlideCollision(i).GetCollider();
+            if (collider is BaseEnemy)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     private void OnPlayerHitboxAreaEntered(Area2D area)
@@ -57,11 +89,11 @@ public partial class Player : CharacterBody2D
 
     private void OnDamageTaken(int damage)
     {
-        CallDeferred(MethodName.ReloadLevel);
+        CallDeferred(MethodName.EmitDied);
     }
 
-    private void ReloadLevel()
+    private void EmitDied()
     {
-        GetTree().ReloadCurrentScene();
+        EmitSignal(SignalName.Died);
     }
 }

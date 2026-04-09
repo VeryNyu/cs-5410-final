@@ -19,11 +19,11 @@ public partial class PlayerJump : PlayerState
         // Apply gravity
         velocity.Y += PlayerNode.Gravity * (float)delta;
 
-        if (Input.IsActionJustPressed("move_jump") && PlayerNode.CanDoubleJump)
-        {
-            StateMachine.ChangeState("DoubleJump");
-            return;
-        }
+        // if (Input.IsActionJustPressed("move_jump") && PlayerNode.CanDoubleJump)
+        // {
+        //     StateMachine.ChangeState("DoubleJump");
+        //     return;
+        // }
 
         // Horizontal air movement
         float direction = Input.GetAxis("move_left", "move_right");

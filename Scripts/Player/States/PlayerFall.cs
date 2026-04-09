@@ -17,10 +17,19 @@ public partial class PlayerFall : PlayerState
         // Apply gravity
         velocity.Y += PlayerNode.Gravity * (float)delta;
 
-        if (Input.IsActionJustPressed("move_jump") && PlayerNode.CanDoubleJump)
-{
-            StateMachine.ChangeState("DoubleJump");
-            return;
+        if (Input.IsActionJustPressed("move_jump"))
+        {
+            if (PlayerNode.CoyoteTimer > 0)
+            {
+                PlayerNode.CoyoteTimer = 0;
+                StateMachine.ChangeState("Jump");
+                return;
+            }
+            // else if (PlayerNode.CanDoubleJump)
+            // {
+            //     StateMachine.ChangeState("DoubleJump");
+            //     return;
+            // }
         }
 
         // Horizontal air movement
@@ -35,10 +44,14 @@ public partial class PlayerFall : PlayerState
             velocity.X = Mathf.MoveToward(velocity.X, 0, PlayerNode.Speed);
         }
 
-        if (PlayerNode.IsOnWall() && direction != 0)
+        if (PlayerNode.CanWallSlide())
         {
-            StateMachine.ChangeState("WallSlide");
-            return;
+            float wallDirection = PlayerNode.GetWallNormal().X < 0 ? 1 : -1;
+            if (direction == wallDirection)
+            {
+                StateMachine.ChangeState("WallSlide");
+                return;
+            }
         }
 
         PlayerNode.Velocity = velocity;

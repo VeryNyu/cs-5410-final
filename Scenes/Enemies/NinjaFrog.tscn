@@ -4,11 +4,40 @@
 [ext_resource type="Script" uid="uid://bk4hepo3watwv" path="res://Scripts/Enemies/NinjaFrog.cs" id="2_jrdps"]
 [ext_resource type="Texture2D" uid="uid://bhli345e831km" path="res://Assets/Art/Main Characters/Ninja Frog/Idle (32x32).png" id="2_t1s5w"]
 [ext_resource type="Texture2D" uid="uid://m7arii1jebd4" path="res://Assets/Art/Main Characters/Ninja Frog/Fall (32x32).png" id="3_tg3yi"]
+[ext_resource type="Texture2D" uid="uid://d1tamtphvkus2" path="res://Assets/Art/Main Characters/Desappearing (96x96).png" id="4_86f14"]
 [ext_resource type="Texture2D" uid="uid://ca0dhtib5fly0" path="res://Assets/Art/Main Characters/Ninja Frog/Jump (32x32).png" id="6_273j6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_16yws"]
 atlas = ExtResource("3_tg3yi")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w6dt"]
+atlas = ExtResource("4_86f14")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pcgf"]
+atlas = ExtResource("4_86f14")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgi5a"]
+atlas = ExtResource("4_86f14")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kymo"]
+atlas = ExtResource("4_86f14")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qme2t"]
+atlas = ExtResource("4_86f14")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_in7im"]
+atlas = ExtResource("4_86f14")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4syx"]
+atlas = ExtResource("4_86f14")
+region = Rect2(576, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jrdps"]
 atlas = ExtResource("2_t1s5w")
@@ -70,6 +99,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_2w6dt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pcgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgi5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kymo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qme2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_in7im")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4syx")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_jrdps")
 }, {
 "duration": 1.0,
@@ -119,7 +174,7 @@ animations = [{
 radius = 8.0
 height = 24.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jrdps"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_hhkxk"]
 resource_local_to_scene = true
 radius = 100.0
 
@@ -140,14 +195,14 @@ ChaseSpeed = 120.0
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=2049654916]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_asmna")
-animation = &"idle"
+animation = &"hit"
 autoplay = "idle"
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1862290795]
 shape = SubResource("CapsuleShape2D_o7s4k")
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" parent_id_path=PackedInt32Array(354440217) index="0" unique_id=1520305643]
-shape = SubResource("CircleShape2D_jrdps")
+shape = SubResource("CircleShape2D_hhkxk")
 
 [node name="WallRayCast" parent="." index="4" unique_id=1322159748]
 position = Vector2(0, 10)

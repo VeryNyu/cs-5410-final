@@ -22,6 +22,7 @@ public partial class PlayerIdle : PlayerState
         if (Input.IsActionJustPressed("move_jump"))
         {
             StateMachine.ChangeState("Jump");
+            PlayerNode.CoyoteTimer = 0;
             return;
         }
 

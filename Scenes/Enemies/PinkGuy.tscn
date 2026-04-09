@@ -4,6 +4,35 @@
 [ext_resource type="Script" uid="uid://d3r66nthmod0q" path="res://Scripts/Enemies/PinkGuy.cs" id="2_0ojln"]
 [ext_resource type="Texture2D" uid="uid://cksv02rmbnbon" path="res://Assets/Art/Main Characters/Pink Man/Idle (32x32).png" id="2_npusq"]
 [ext_resource type="Texture2D" uid="uid://b4f54f70yd8lc" path="res://Assets/Art/Main Characters/Pink Man/Run (32x32).png" id="3_0ojln"]
+[ext_resource type="Texture2D" uid="uid://d1tamtphvkus2" path="res://Assets/Art/Main Characters/Desappearing (96x96).png" id="3_y1ln3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwu8x"]
+atlas = ExtResource("3_y1ln3")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtrv0"]
+atlas = ExtResource("3_y1ln3")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwnfv"]
+atlas = ExtResource("3_y1ln3")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca01k"]
+atlas = ExtResource("3_y1ln3")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vuxc"]
+atlas = ExtResource("3_y1ln3")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0n4ke"]
+atlas = ExtResource("3_y1ln3")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucreb"]
+atlas = ExtResource("3_y1ln3")
+region = Rect2(576, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1ln3"]
 atlas = ExtResource("2_npusq")
@@ -101,6 +130,32 @@ region = Rect2(352, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_bwu8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtrv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwnfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ca01k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vuxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0n4ke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucreb")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_y1ln3")
 }, {
 "duration": 1.0,
@@ -183,7 +238,7 @@ animations = [{
 radius = 8.0
 height = 24.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0ojln"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_p53uu"]
 resource_local_to_scene = true
 radius = 150.0
 
@@ -203,14 +258,14 @@ MoveSpeed = 30.0
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=2049654916]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_bwu8x")
-animation = &"idle"
+animation = &"hit"
 autoplay = "idle"
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1862290795]
 shape = SubResource("CapsuleShape2D_npusq")
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" parent_id_path=PackedInt32Array(354440217) index="0" unique_id=1520305643]
-shape = SubResource("CircleShape2D_0ojln")
+shape = SubResource("CircleShape2D_p53uu")
 
 [node name="BehaviorManager" parent="." index="5" unique_id=640706303]
 InitialStateName = "Idle"
