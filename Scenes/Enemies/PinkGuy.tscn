@@ -151,7 +151,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ucreb")
 }],
 "loop": false,
-"name": &"hit",
+"name": &"died",
 "speed": 5.0
 }, {
 "frames": [{
@@ -248,7 +248,7 @@ height = 10.666667
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l1m03"]
 radius = 9.333334
-height = 25.33
+height = 25.67
 
 [node name="PinkGuy" unique_id=236515003 instance=ExtResource("1_t7icg")]
 scale = Vector2(0.75, 0.75)
@@ -258,7 +258,7 @@ MoveSpeed = 30.0
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=2049654916]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_bwu8x")
-animation = &"hit"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1862290795]
@@ -279,7 +279,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_0ojln")
 
 [node name="CollisionShape2D" parent="EnemyHitbox" parent_id_path=PackedInt32Array(853586366) index="0" unique_id=1679217]
-position = Vector2(0, 0.667)
+position = Vector2(0, 1.3333334)
 shape = SubResource("CapsuleShape2D_l1m03")
 
 [editable path="EnemyHurtbox"]

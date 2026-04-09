@@ -54,7 +54,7 @@ public partial class BaseEnemy : CharacterBody2D
         GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true);
 
         // 3. Play the death animation (change "hit" to match your exact animation name)
-        Sprite.Play("hit"); 
+        Sprite.Play("died"); 
 
         // 4. Wait for the AnimatedSprite2D to finish playing this specific animation
         await ToSignal(Sprite, AnimatedSprite2D.SignalName.AnimationFinished);

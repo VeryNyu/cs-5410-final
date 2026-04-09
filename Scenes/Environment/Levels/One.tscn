@@ -6,10 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cgqwiffau5iet" path="res://scenes/Components/SceneryComponents/Checkpoints/checkpoint.tscn" id="3_jxq0j"]
 [ext_resource type="PackedScene" uid="uid://8cm3m4mg0uvj" path="res://scenes/Enemies/PinkGuy.tscn" id="5_qu8b5"]
 [ext_resource type="PackedScene" uid="uid://d5r0qiim3yua" path="res://scenes/Enemies/NinjaFrog.tscn" id="6_8qcl5"]
-[ext_resource type="PackedScene" uid="uid://dbe88gt4adpop" path="res://scenes/Components/hitbox.tscn" id="7_w3sjr"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmtbh"]
-size = Vector2(3851, 46)
 
 [node name="One" type="TileMapLayer" unique_id=496805213]
 z_as_relative = false
@@ -23,16 +19,6 @@ position = Vector2(26, 177)
 [node name="Checkpoint" parent="." unique_id=1312576257 instance=ExtResource("3_jxq0j")]
 position = Vector2(3184, 33)
 
-[node name="DeathPlane" parent="." unique_id=853586366 instance=ExtResource("7_w3sjr")]
-position = Vector2(872, 397)
-collision_layer = 32
-collision_mask = 6
-Damage = 5
-
-[node name="CollisionShape2D" parent="DeathPlane" index="0" unique_id=1679217]
-position = Vector2(920.5, -127)
-shape = SubResource("RectangleShape2D_lmtbh")
-
 [node name="PinkGuy" parent="." unique_id=236515003 instance=ExtResource("5_qu8b5")]
 position = Vector2(372, 183)
 
@@ -40,5 +26,3 @@ position = Vector2(372, 183)
 position = Vector2(838, 162)
 
 [connection signal="body_entered" from="Checkpoint" to="." method="_on_checkpoint_body_entered"]
-
-[editable path="DeathPlane"]

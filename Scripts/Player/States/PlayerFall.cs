@@ -17,6 +17,17 @@ public partial class PlayerFall : PlayerState
         // Apply gravity
         velocity.Y += PlayerNode.Gravity * (float)delta;
 
+        if (PlayerNode.IsKnockedBack)
+        {
+            PlayerNode.Velocity = velocity;
+            if (PlayerNode.IsOnFloor())
+            {
+                PlayerNode.IsKnockedBack = false;
+                StateMachine.ChangeState("Idle");
+            }
+            return; 
+        }
+
         if (Input.IsActionJustPressed("move_jump"))
         {
             if (PlayerNode.CoyoteTimer > 0)
