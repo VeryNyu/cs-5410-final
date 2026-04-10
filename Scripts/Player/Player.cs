@@ -47,46 +47,24 @@ public partial class Player : CharacterBody2D
         Died += TempOnDied;
     }
 
-    private async void TempOnDied()
+    private void TempOnDied()
     {
-        // 1. Stop all movement and state machine logic immediately
-        SetPhysicsProcess(false);
-        SetProcess(false);
-
-        // 2. Safely disable the damage zones so the dying enemy cannot hurt the player
-        GetNode<Area2D>("PlayerHitbox").SetDeferred("monitorable", false);
-        GetNode<Area2D>("PlayerHitbox").SetDeferred("monitoring", false);
-        GetNode<Area2D>("PlayerHurtbox").SetDeferred("monitorable", false);
-        GetNode<Area2D>("PlayerHurtbox").SetDeferred("monitoring", false);
-
-        GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true);
-
-        // 3. Play the death animation (change "hit" to match your exact animation name)
-        Sprite.Play("died"); 
-
-        // 4. Wait for the AnimatedSprite2D to finish playing this specific animation
-        await ToSignal(Sprite, AnimatedSprite2D.SignalName.AnimationFinished);
-
         GD.Print("Player died signal emitted! Reloading scene temporarily from Player.cs...");
         GetTree().ReloadCurrentScene();
     }
 
     public override void _Process(double delta)
     {
+        // 1. Handle Invincibility Transparency and Hitboxes
         if (_isInvincible)
         {
             _invincibilityTimer -= delta;
-
-            // Tell the shader we are invincible (solid red)
-            _spriteMaterial?.SetShaderParameter("is_invincible", true);
+            Sprite.SelfModulate = new Color(1, 1, 1, 0.5f);
 
             if (_invincibilityTimer <= 0)
             {
                 _isInvincible = false;
-
-                // Tell the shader exactly when the i-frames ended so it starts the pulse at peak red
-                float currentTime = Time.GetTicksMsec() / 1000.0f;
-                _spriteMaterial?.SetShaderParameter("start_time", currentTime);
+                Sprite.SelfModulate = new Color(1, 1, 1, 1);
 
                 Area2D hurtbox = GetNode<Area2D>("PlayerHurtbox");
                 hurtbox.SetDeferred("monitorable", true);
@@ -95,18 +73,19 @@ public partial class Player : CharacterBody2D
         }
         else
         {
-            // Turn off invincibility color
-            _spriteMaterial?.SetShaderParameter("is_invincible", false);
+            Sprite.SelfModulate = new Color(1, 1, 1, 1);
+        }
 
-            // If health is 1, tell the shader to pulse!
-            if (CurrentHealth == 1)
-            {
-                _spriteMaterial?.SetShaderParameter("is_hurt", true);
-            }
-            else
-            {
-                _spriteMaterial?.SetShaderParameter("is_hurt", false);
-            }
+        // 2. Handle 1-Health Shader Pulse Independently
+        _spriteMaterial?.SetShaderParameter("is_invincible", false); // Force the old solid red off
+
+        if (CurrentHealth == 1)
+        {
+            _spriteMaterial?.SetShaderParameter("is_hurt", true);
+        }
+        else
+        {
+            _spriteMaterial?.SetShaderParameter("is_hurt", false);
         }
 
         StateMachine.Update(delta);
@@ -162,7 +141,7 @@ public partial class Player : CharacterBody2D
         }
     }
 
-    private void OnDamageTaken(int damage)
+    private async void OnDamageTaken(int damage)
     {
         // Ignore damage if we are currently flashing/invincible
         if (_isInvincible) return;
@@ -173,16 +152,41 @@ public partial class Player : CharacterBody2D
         {
             // Out of health, die normally
             _spriteMaterial?.SetShaderParameter("is_hurt", false);
+
+            // 1. Stop all movement and state machine logic immediately
+            SetPhysicsProcess(false);
+            SetProcess(false);
+
+            // 2. Safely disable the damage zones so the dying enemy cannot hurt the player
+            GetNode<Area2D>("PlayerHitbox").SetDeferred("monitorable", false);
+            GetNode<Area2D>("PlayerHitbox").SetDeferred("monitoring", false);
+            GetNode<Area2D>("PlayerHurtbox").SetDeferred("monitorable", false);
+            GetNode<Area2D>("PlayerHurtbox").SetDeferred("monitoring", false);
+
+            GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true);
+
+            // 3. Play the death animation (change "hit" to match your exact animation name)
+            Sprite.Play("died"); 
+
+            // 4. Wait for the AnimatedSprite2D to finish playing this specific animation
+            await ToSignal(Sprite, AnimatedSprite2D.SignalName.AnimationFinished);
+
             CallDeferred(MethodName.EmitDied);
         }
         else
         {
-            // Survived the hit! Start flashing red.
             StartInvincibility();
             IsKnockedBack = true;
 
-            // --- KNOCKBACK LOGIC ---
+            // Sync the shader to start pulsing immediately
+            if (CurrentHealth == 1)
+            {
+                float currentTime = Time.GetTicksMsec() / 1000.0f;
+                _spriteMaterial?.SetShaderParameter("start_time", currentTime);
+            }
+
             Vector2 knockback = Velocity;
+            // --- KNOCKBACK LOGIC ---
             
             // Sprite.FlipH is true if facing left. If facing left, bounce right (positive X).
             // If facing right, bounce left (negative X).

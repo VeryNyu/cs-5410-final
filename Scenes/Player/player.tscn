@@ -3,12 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://b85w7vugm2mh8" path="res://Assets/Art/Main Characters/Virtual Guy/Idle (32x32).png" id="1_uvnfx"]
 [ext_resource type="Script" uid="uid://fwqftx2xi2kd" path="res://Scripts/Player/Player.cs" id="1_wwtew"]
 [ext_resource type="Texture2D" uid="uid://d1tamtphvkus2" path="res://Assets/Art/Main Characters/Desappearing (96x96).png" id="2_aciub"]
-[ext_resource type="Shader" uid="uid://bstw7dyj12kds" path="res://assets/player.gdshader" id="2_hk2ix"]
+[ext_resource type="Shader" uid="uid://bstw7dyj12kds" path="res://Assets/player.gdshader" id="2_hk2ix"]
 [ext_resource type="Texture2D" uid="uid://d3isrjj2f2gpt" path="res://Assets/Art/Main Characters/Virtual Guy/Double Jump (32x32).png" id="2_xpcdj"]
 [ext_resource type="Texture2D" uid="uid://cho4d3xsuvwu0" path="res://Assets/Art/Main Characters/Virtual Guy/Fall (32x32).png" id="3_dl1wr"]
 [ext_resource type="PackedScene" uid="uid://jdj4brdtkony" path="res://scenes/Components/camera.tscn" id="4_mtuoh"]
 [ext_resource type="Texture2D" uid="uid://b2ad3sx0v8b5v" path="res://Assets/Art/Main Characters/Virtual Guy/Run (32x32).png" id="4_uiqp4"]
 [ext_resource type="Texture2D" uid="uid://b58y5wl2d2gfx" path="res://Assets/Art/Main Characters/Virtual Guy/Jump (32x32).png" id="5_wwtew"]
+[ext_resource type="Texture2D" uid="uid://blfvp1si5r5ma" path="res://Assets/Art/Main Characters/Virtual Guy/Hit (32x32).png" id="6_43ckd"]
 [ext_resource type="Texture2D" uid="uid://okegv50qxpvw" path="res://Assets/Art/Main Characters/Virtual Guy/Wall Jump (32x32).png" id="7_uxo23"]
 [ext_resource type="Script" uid="uid://bdji7sm487bsj" path="res://Scripts/Player/PlayerStateMachine.cs" id="9_wwtew"]
 [ext_resource type="Script" uid="uid://cuns3pqfy6w4p" path="res://Scripts/Player/States/PlayerIdle.cs" id="10_n7rn1"]
@@ -84,6 +85,34 @@ region = Rect2(160, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_x8khf"]
 atlas = ExtResource("3_dl1wr")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32uah"]
+atlas = ExtResource("6_43ckd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihqbe"]
+atlas = ExtResource("6_43ckd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgmen"]
+atlas = ExtResource("6_43ckd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqhit"]
+atlas = ExtResource("6_43ckd")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8txv"]
+atlas = ExtResource("6_43ckd")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7iww4"]
+atlas = ExtResource("6_43ckd")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ploos"]
+atlas = ExtResource("6_43ckd")
+region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a3d8c"]
 atlas = ExtResource("1_uvnfx")
@@ -262,6 +291,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_32uah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihqbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgmen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqhit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8txv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7iww4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ploos")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_a3d8c")
 }, {
 "duration": 1.0,
@@ -387,7 +442,7 @@ CoyoteTime = 1.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=85044737]
 material = SubResource("ShaderMaterial_43ckd")
 sprite_frames = SubResource("SpriteFrames_06tpx")
-animation = &"idle"
+animation = &"hit"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1364292054]

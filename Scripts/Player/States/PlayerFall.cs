@@ -2,11 +2,44 @@ using Godot;
 
 public partial class PlayerFall : PlayerState
 {
+    private bool _isHitSignalConnected = false;
+
     public override void Enter()
     {
-        if (PlayerNode.Sprite.Animation != "double_jump")
+        if (PlayerNode.IsKnockedBack)
+        {
+            PlayerNode.Sprite.Play("hit");
+            PlayerNode.Sprite.AnimationFinished += OnAnimationFinished;
+            _isHitSignalConnected = true;
+        }
+        else
         {
             PlayerNode.Sprite.Play("fall");
+        }
+    }
+
+    public override void Exit()
+    {
+        if (_isHitSignalConnected)
+        {
+            // Safely unhook the signal when leaving the state
+            PlayerNode.Sprite.AnimationFinished -= OnAnimationFinished;
+            _isHitSignalConnected = false;
+        }
+    }
+
+    private void OnAnimationFinished()
+    {
+        // When the hit animation ends, turn off the knockback lock
+        if (PlayerNode.Sprite.Animation == "hit")
+        {
+            PlayerNode.IsKnockedBack = false;
+
+            // If we are still airborne, visually switch back to falling
+            if (!PlayerNode.IsOnFloor())
+            {
+                PlayerNode.Sprite.Play("fall");
+            }
         }
     }
 
@@ -20,7 +53,7 @@ public partial class PlayerFall : PlayerState
         if (PlayerNode.IsKnockedBack)
         {
             PlayerNode.Velocity = velocity;
-            if (PlayerNode.IsOnFloor())
+            if (velocity.Y >= 0 && PlayerNode.IsOnFloor())
             {
                 PlayerNode.IsKnockedBack = false;
                 StateMachine.ChangeState("Idle");
