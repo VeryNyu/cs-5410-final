@@ -8,7 +8,7 @@ public partial class Player : CharacterBody2D
     public AnimatedSprite2D Sprite { get; private set; }
     public PlayerStateMachine StateMachine { get; private set; }
 
-    public int CurrentHealth { get; set; } = 2;
+    public float CurrentHealth { get; set; } = 2;
     private bool _isInvincible = false;
     private double _invincibilityTimer = 0.0;
     [Export] public float InvincibilityDuration { get; set; } = 2.0f; // 2 seconds of protection
@@ -148,7 +148,7 @@ public partial class Player : CharacterBody2D
 
         CurrentHealth -= damage;
 
-        if (CurrentHealth <= 0)
+        if (CurrentHealth < 1)
         {
             // Out of health, die normally
             _spriteMaterial?.SetShaderParameter("is_hurt", false);
