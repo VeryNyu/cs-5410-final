@@ -17,6 +17,7 @@ func _process(delta: float) -> void:
 	if !is_stopped:
 		time_elapsed += delta
 		$Time/Time.text = str(time_elapsed).pad_decimals(2)
+		$Score/Score.text = str(score)
 
 
 func Game_Start():

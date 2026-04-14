@@ -3,7 +3,7 @@ extends Area2D
 signal collect
 
 var body: String = "apple"
-var value: int
+var value: int = 100
 
 
 func _on_body_entered(_body: Node2D) -> void:

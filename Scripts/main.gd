@@ -37,3 +37,6 @@ func _on_goal() -> void:
 	var score: String = $UI/CanvasLayer/Hud/Score/Score.text
 	var time: String = $UI/CanvasLayer/Hud/Time/Time.text
 	SaveLoad.save_scores("???", level, score, time)
+
+func _on_fruit_collected(points: int) -> void:
+	$UI/CanvasLayer/Hud.score += points
