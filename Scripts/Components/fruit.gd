@@ -7,11 +7,12 @@ var value: int = 100
 
 
 func _on_body_entered(_body: Node2D) -> void:
-	$AnimatedSprite2D.animation.play("collect")
+	$Timer.stop()
+	$AnimatedSprite2D.play("collect")
 	collect.emit(value)
-	get_tree().create_timer(1.0)
+	await get_tree().create_timer(1.0).timeout
 	queue_free()
 
 
 func _on_timeout() -> void:
-	$AnimatedSprite2D.animation.play(body)
+	$AnimatedSprite2D.play(body)
