@@ -150,6 +150,22 @@ text = "Back"
 [node name="HBoxContainer" type="HBoxContainer" parent="Container" unique_id=1086098430]
 layout_mode = 2
 
+[node name="Reset" type="Button" parent="." unique_id=570829587]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -60.0
+offset_right = -29.0
+offset_bottom = -29.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Reset"
+
 [connection signal="pressed" from="Container/Title/Level/Left" to="." method="_on_nav_pressed" binds= ["Left"]]
 [connection signal="pressed" from="Container/Title/Level/Right" to="." method="_on_nav_pressed" binds= ["Right"]]
 [connection signal="pressed" from="Container/Back" to="." method="_on_button_pressed" binds= ["Back"]]
+[connection signal="pressed" from="Reset" to="." method="_on_button_pressed" binds= ["Reset"]]

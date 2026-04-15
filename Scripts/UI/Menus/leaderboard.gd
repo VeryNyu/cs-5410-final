@@ -46,6 +46,9 @@ func _display_helper(type: String, page: Array):
 func _on_button_pressed(key: String) -> void:
 	match key:
 		"Back": Change.emit("Back")
+		"Reset":
+			SaveLoad.clear_scores()
+			display()
 
 
 func _on_nav_pressed(key: String) -> void:
