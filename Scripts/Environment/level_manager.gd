@@ -29,9 +29,9 @@ func change_level(key: String):
 	current_level.collision_enabled = true
 	
 	match key:
-		"One": print("Level Manager Reporting Level: " + key)
-		"Two": print("Level Manager Reporting Level: " + key)
-		"Three": print("Level Manager Reporting Level: " + key)
+		"One": get_tree().get_node("res://Scenes/Components/camera.tscn").limit_right = 3485
+		"Two": get_tree().get_node("res://Scenes/Components/camera.tscn").limit_right = 3072
+		"Three": get_tree().get_node("res://Scenes/Components/camera.tscn").limit_right = 2560
 
 
 func _on_goal() -> void:
