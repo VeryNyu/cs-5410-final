@@ -1,8 +1,8 @@
 extends Node
 
 const VALUES: Dictionary = {
-	"Pink Man": 50,
-	"Ninja Frog": 200,
+	"PinkGuy": 50,
+	"NinjaFrog": 200,
 	
 	"Cherry": 100,
 	"Strawberry": 150,
@@ -18,8 +18,8 @@ var DATA: Dictionary = {
 	0: {
 		"PlayerSpawnPoint": Vector2i(37, 201),
 		"EnemySpawnPoints": {
-			"Pink Man": [],
-			"Ninja Frog": []
+			"PinkGuy": [],
+			"NinjaFrog": []
 		},
 		"FruitSpawnPoints": {
 			"Cherry": [],
@@ -35,8 +35,8 @@ var DATA: Dictionary = {
 	1: {
 		"PlayerSpawnPoint": Vector2i(26, 177),
 		"EnemySpawnPoints": {
-			"Pink Man": [],
-			"Ninja Frog": []
+			"PinkGuy": [],
+			"NinjaFrog": []
 		},
 		"FruitSpawnPoints": {
 			"Cherry": [
@@ -97,8 +97,8 @@ var DATA: Dictionary = {
 	2: {
 		"PlayerSpawnPoint": Vector2i(37, 101),
 		"EnemySpawnPoints": {
-			"Pink Man": [],
-			"Ninja Frog": []
+			"PinkGuy": [],
+			"NinjaFrog": []
 		},
 		"FruitSpawnPoints": {
 			"Cherry": [],

@@ -1,6 +1,7 @@
 extends Node2D
 
 var PLAYER: PackedScene = preload("res://Scenes/Player/player.tscn")
+var ENEMY: PackedScene = preload("res://Scenes/Enemies/Enemy.tscn")
 var FRUIT: PackedScene = preload("res://Scenes/Components/fruit.tscn")
 var player
 var level: int = 0
@@ -37,7 +38,16 @@ func _spawn_player():
 
 
 func _spawn_enemies():
-	pass
+	for node in get_tree().get_nodes_in_group("Enemies"): node.queue_free()
+	var data = Config.DATA[level]["EnemySpawnPoints"]
+	
+	for Enemy in ["PinkGuy", "NinjaFrog"]:
+		for location in data[Enemy]:
+			var enemy = ENEMY.instantiate()
+			enemy.position = location
+#			enemy.GIVE_POINTS.connect(_on_enemy_kill?)
+			add_to_group("Enemies")
+			add_child(enemy)
 
 
 func _spawn_fruits():
