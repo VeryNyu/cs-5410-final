@@ -2,6 +2,10 @@ extends Node2D
 
 var PLAYER: PackedScene = preload("res://Scenes/Player/player.tscn")
 var FRUIT: PackedScene = preload("res://Scenes/Components/fruit.tscn")
+var ENEMY_SCENES: Dictionary = {
+"Ninja Frog": preload("res://Scenes/Enemies/NinjaFrog.tscn"),
+"Pink Man": preload("res://Scenes/Enemies/PinkGuy.tscn")
+}
 var player
 var level: int = 0
 
@@ -37,7 +41,16 @@ func _spawn_player():
 
 
 func _spawn_enemies():
-	pass
+	for node in get_tree().get_nodes_in_group("Enemies"): node.queue_free()
+	var data = Config.DATA[level]["EnemySpawnPoints"]
+	
+	for enemy_key in data:
+		for location in data[enemy_key]:
+			var enemy = ENEMY_SCENES[enemy_key].instantiate()
+			enemy.position = location
+			enemy.Defeated.connect(_on_enemy_defeated)
+			add_to_group("Enemies")
+			add_child(enemy)
 
 
 func _spawn_fruits():
@@ -67,8 +80,8 @@ func _on_goal() -> void:
 
 func _on_fruit_collected(points: int) -> void:
 	$UI/CanvasLayer/Hud.score += points
-	$UI/CanvasLayer/Hud.text = $UI/CanvasLayer/Hud.score
+	$UI/CanvasLayer/Hud/Score/Score.text = str($UI/CanvasLayer/Hud.score).pad_zeros(5)
 	
 func _on_enemy_defeated(points: int) -> void:
 	$UI/CanvasLayer/Hud.score += points
-	$UI/CanvasLayer/Hud.text = $UI/CanvasLayer/Hud.score
+	$UI/CanvasLayer/Hud/Score/Score.text = str($UI/CanvasLayer/Hud.score).pad_zeros(5)

@@ -174,7 +174,7 @@ animations = [{
 radius = 8.0
 height = 24.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hhkxk"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_86f14"]
 resource_local_to_scene = true
 radius = 100.0
 
@@ -191,6 +191,7 @@ scale = Vector2(0.75, 0.75)
 script = ExtResource("2_jrdps")
 MoveSpeed = 90.0
 ChaseSpeed = 120.0
+ScoreValue = 250
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=2049654916]
 position = Vector2(0, -4)
@@ -202,7 +203,7 @@ autoplay = "idle"
 shape = SubResource("CapsuleShape2D_o7s4k")
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" parent_id_path=PackedInt32Array(354440217) index="0" unique_id=1520305643]
-shape = SubResource("CircleShape2D_hhkxk")
+shape = SubResource("CircleShape2D_86f14")
 
 [node name="WallRayCast" parent="." index="4" unique_id=1322159748]
 position = Vector2(0, 10)

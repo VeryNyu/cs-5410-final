@@ -238,7 +238,7 @@ animations = [{
 radius = 8.0
 height = 24.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_p53uu"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_y1ln3"]
 resource_local_to_scene = true
 radius = 150.0
 
@@ -254,6 +254,7 @@ height = 25.67
 scale = Vector2(0.75, 0.75)
 script = ExtResource("2_0ojln")
 MoveSpeed = 30.0
+ScoreValue = 50
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=2049654916]
 position = Vector2(0, -4)
@@ -265,7 +266,7 @@ autoplay = "idle"
 shape = SubResource("CapsuleShape2D_npusq")
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" parent_id_path=PackedInt32Array(354440217) index="0" unique_id=1520305643]
-shape = SubResource("CircleShape2D_p53uu")
+shape = SubResource("CircleShape2D_y1ln3")
 
 [node name="BehaviorManager" parent="." index="5" unique_id=640706303]
 InitialStateName = "Idle"
