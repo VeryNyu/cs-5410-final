@@ -2,7 +2,6 @@
 
 [ext_resource type="TileSet" uid="uid://chfaft1hf8noy" path="res://Assets/Art/Terrain/Overworld.tres" id="1_y0mth"]
 [ext_resource type="PackedScene" uid="uid://chdap0hw4okjn" path="res://Scenes/Components/SceneryComponents/Checkpoints/startpoint.tscn" id="2_gf3l5"]
-[ext_resource type="Texture2D" uid="uid://cfy4so3wa5xrq" path="res://TEMP/SuperMarioBrosMap1-4.png" id="3_u4o5l"]
 [ext_resource type="PackedScene" uid="uid://cgqwiffau5iet" path="res://Scenes/Components/SceneryComponents/Checkpoints/checkpoint.tscn" id="4_3gjk0"]
 
 [node name="Three" type="TileMapLayer" unique_id=1708197542]
@@ -14,15 +13,10 @@ metadata/_edit_horizontal_guides_ = [80.0, 96.0, 144.0, 160.0, 88.0, 104.0]
 [node name="Startpoint" parent="." unique_id=1637682820 instance=ExtResource("2_gf3l5")]
 position = Vector2(26, 88)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1203689258]
-visible = false
-position = Vector2(1664, 120)
-texture = ExtResource("3_u4o5l")
-
 [node name="Checkpoint" parent="." unique_id=1494938634 instance=ExtResource("4_3gjk0")]
 position = Vector2(2273, 113)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1014857632]
+[node name="Bridge" type="TileMapLayer" parent="." unique_id=1014857632]
 z_index = 1
 tile_map_data = PackedByteArray("AACAAAoAAAARAAIAAACBAAoAAAASAAIAAACCAAoAAAASAAIAAACDAAoAAAASAAIAAACEAAoAAAASAAIAAACFAAoAAAASAAIAAACGAAoAAAASAAIAAACHAAoAAAASAAIAAACIAAoAAAASAAIAAACJAAoAAAASAAIAAACKAAoAAAASAAIAAACLAAoAAAASAAIAAACMAAoAAAATAAIAAAA=")
 tile_set = ExtResource("1_y0mth")
