@@ -2,11 +2,14 @@ extends Control
 
 signal Goal
 
+var CAMERA: Node2D
+
 var LEVELS: Dictionary
 var current_level: Node2D
 
 
 func _ready() -> void:
+	CAMERA = get_node("res://Scenes/Components/camera.tscn")
 	hide()
 	LEVELS = {
 		"One": get_node("One"),
@@ -29,9 +32,9 @@ func change_level(key: String):
 	current_level.collision_enabled = true
 	
 	match key:
-		"One": get_tree().get_node("res://Scenes/Components/camera.tscn").limit_right = 3485
-		"Two": get_tree().get_node("res://Scenes/Components/camera.tscn").limit_right = 3072
-		"Three": get_tree().get_node("res://Scenes/Components/camera.tscn").limit_right = 2560
+		"One": CAMERA.limit_right = 3485
+		"Two": CAMERA.limit_right = 3072
+		"Three": CAMERA.limit_right = 2560
 
 
 func _on_goal() -> void:
