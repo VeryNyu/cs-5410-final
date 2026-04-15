@@ -69,11 +69,11 @@ public partial class PlayerFall : PlayerState
                 StateMachine.ChangeState("Jump");
                 return;
             }
-            // else if (PlayerNode.CanDoubleJump)
-            // {
-            //     StateMachine.ChangeState("DoubleJump");
-            //     return;
-            // }
+            else if (PlayerNode.CanDoubleJump && PlayerNode.CurrentPowerup == PowerupType.Frog)
+            {
+                StateMachine.ChangeState("DoubleJump");
+                return;
+            }
         }
 
         // Horizontal air movement

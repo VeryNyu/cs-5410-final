@@ -1,5 +1,11 @@
 using Godot;
 
+public enum PowerupType
+{
+    None,
+    Frog
+}
+
 public partial class Player : CharacterBody2D
 {
     [Signal]
@@ -8,7 +14,9 @@ public partial class Player : CharacterBody2D
     public AnimatedSprite2D Sprite { get; private set; }
     public PlayerStateMachine StateMachine { get; private set; }
 
-    public float CurrentHealth { get; set; } = 2;
+    public PowerupType CurrentPowerup { get; private set; } = PowerupType.None;
+
+    public float CurrentHealth { get; set; } = 2.0f;
     private bool _isInvincible = false;
     private double _invincibilityTimer = 0.0;
     [Export] public float InvincibilityDuration { get; set; } = 2.0f; // 2 seconds of protection
@@ -79,7 +87,7 @@ public partial class Player : CharacterBody2D
         // 2. Handle 1-Health Shader Pulse Independently
         _spriteMaterial?.SetShaderParameter("is_invincible", false); // Force the old solid red off
 
-        if (CurrentHealth == 1)
+        if (CurrentHealth < 2)
         {
             _spriteMaterial?.SetShaderParameter("is_hurt", true);
         }
@@ -177,9 +185,10 @@ public partial class Player : CharacterBody2D
         {
             StartInvincibility();
             IsKnockedBack = true;
+            ClearPowerup();
 
             // Sync the shader to start pulsing immediately
-            if (CurrentHealth == 1)
+            if (CurrentHealth < 2)
             {
                 float currentTime = Time.GetTicksMsec() / 1000.0f;
                 _spriteMaterial?.SetShaderParameter("start_time", currentTime);
@@ -213,5 +222,26 @@ public partial class Player : CharacterBody2D
     private void EmitDied()
     {
         EmitSignal(SignalName.Died);
+    }
+
+    public void ApplyPowerup(PowerupType type)
+    {
+        CurrentPowerup = type;
+        
+        switch (type)
+        {
+            case PowerupType.Frog:
+                Sprite.Modulate = new Color(0, 1, 0, 1);
+                break;
+            case PowerupType.None:
+            default:
+                Sprite.Modulate = new Color(1, 1, 1, 1);
+                break;
+        }
+    }
+
+    public void ClearPowerup()
+    {
+        ApplyPowerup(PowerupType.None);
     }
 }

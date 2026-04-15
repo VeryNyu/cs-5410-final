@@ -41,3 +41,7 @@ func _on_goal() -> void:
 func _on_fruit_collected(points: int) -> void:
 	$UI/CanvasLayer/Hud.score += points
 	$UI/CanvasLayer/Hud.text = $UI/CanvasLayer/Hud.score
+	
+func _on_enemy_defeated(points: int) -> void:
+	$UI/CanvasLayer/Hud.score += points
+	$UI/CanvasLayer/Hud.text = $UI/CanvasLayer/Hud.score

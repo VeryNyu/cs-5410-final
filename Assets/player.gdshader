@@ -8,7 +8,7 @@ uniform float start_time = 0.0;
 
 void fragment() {
     // Grab the normal sprite color and transparency
-    vec4 tex_color = texture(TEXTURE, UV);
+    vec4 tex_color = texture(TEXTURE, UV) * COLOR;
 
     //if (is_invincible) {
         //// I-Frames: Multiply by red (keeps the sprite's shape/transparency intact)

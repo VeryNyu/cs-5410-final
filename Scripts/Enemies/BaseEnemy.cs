@@ -5,6 +5,11 @@ public partial class BaseEnemy : CharacterBody2D
     [Export] public float MoveSpeed { get; set; } = 50.0f;
     [Export] public float ChaseSpeed { get; set; } = 100.0f;
 
+    [Signal]
+    public delegate void DefeatedEventHandler(int points);
+
+    [Export] public int ScoreValue { get; set; } = 100;
+
     public BehaviorManager BehaviorManager { get; private set; }
     public AnimatedSprite2D Sprite { get; private set; }
 
@@ -52,6 +57,10 @@ public partial class BaseEnemy : CharacterBody2D
         GetNode<Area2D>("EnemyHurtbox").SetDeferred("monitoring", false);
 
         GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true);
+
+        OnDeath();
+
+        EmitSignal(SignalName.Defeated, ScoreValue);
 
         // 3. Play the death animation (change "hit" to match your exact animation name)
         Sprite.Play("died"); 
@@ -108,5 +117,9 @@ public partial class BaseEnemy : CharacterBody2D
     protected virtual void Think(double delta) 
     { 
         // Override this method to implement your enemy's thinking logic
+    }
+
+    protected virtual void OnDeath()
+    {
     }
 }
