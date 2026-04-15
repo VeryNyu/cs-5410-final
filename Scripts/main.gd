@@ -49,7 +49,7 @@ func _spawn_enemies():
 			var enemy = ENEMY_SCENES[enemy_key].instantiate()
 			enemy.position = location
 			enemy.Defeated.connect(_on_enemy_defeated)
-			add_to_group("Enemies")
+			enemy.add_to_group("Enemies")
 			add_child(enemy)
 
 
@@ -62,7 +62,7 @@ func _spawn_fruits():
 			var fruit = FRUIT.instantiate()
 			fruit.position = location
 			fruit.collect.connect(_on_fruit_collected)
-			add_to_group("Fruits")
+			fruit.add_to_group("Fruits")
 			add_child(fruit)
 
 
