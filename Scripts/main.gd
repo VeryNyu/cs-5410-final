@@ -3,7 +3,7 @@ extends Node2D
 var PLAYER_SCENE: PackedScene = preload("res://Scenes/Player/player.tscn")
 var ENEMY_SCENES: Dictionary = {
 	"NinjaFrog": preload("res://Scenes/Enemies/NinjaFrog.tscn"),
-	"PinkMan": preload("res://Scenes/Enemies/PinkGuy.tscn")
+	"PinkGuy": preload("res://Scenes/Enemies/PinkGuy.tscn")
 }
 var FRUIT_SCENES: PackedScene = preload("res://Scenes/Components/fruit.tscn")
 
@@ -15,16 +15,15 @@ func _ready() -> void:
 
 
 func _on_game_start(key: String) -> void:
-	_spawn_objects()
-	$LevelManager.change_level(key)
-	
 	match key:
 		"One": level = 0
 		"Two": level = 1
 		"Three": level = 2
 		"Restart": print("Level One Chosen")
 		_: print("Defaulted Game Start")
-
+		
+	_spawn_objects()
+	$LevelManager.change_level(key)
 
 func _spawn_objects():
 	_spawn_player()
