@@ -437,6 +437,9 @@ height = 14.285721
 [node name="Player" type="CharacterBody2D" unique_id=1695953942 groups=["Player"]]
 scale = Vector2(0.7, 0.7)
 script = ExtResource("1_wwtew")
+Speed = 500.0
+JumpVelocity = -600.0
+CoyoteTime = 2.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=85044737]
 material = SubResource("ShaderMaterial_43ckd")
@@ -449,7 +452,6 @@ position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_tugb3")
 
 [node name="Camera" parent="." unique_id=1169797830 instance=ExtResource("4_mtuoh")]
-limit_enabled = true
 
 [node name="StateMachine" type="Node" parent="." unique_id=990596404]
 script = ExtResource("9_wwtew")

@@ -66,8 +66,15 @@ animations = [{
 "speed": 25.0
 }]
 
-[node name="Endpoint" type="Node2D" unique_id=620650196]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ay01r"]
+size = Vector2(32, 45)
+
+[node name="Endpoint" type="Area2D" unique_id=658395757]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1142466026]
 sprite_frames = SubResource("SpriteFrames_tbecf")
 autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2022665534]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_ay01r")
