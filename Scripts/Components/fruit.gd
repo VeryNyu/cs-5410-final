@@ -7,7 +7,7 @@ var value: int = 100
 
 
 func _on_body_entered(_body: Node2D) -> void:
-	if _body.name == "player":
+	if _body.name == "Player":
 		$CollisionShape2D.set_deferred("disabled", true)
 		$Timer.stop()
 		$AnimatedSprite2D.play("collect")
