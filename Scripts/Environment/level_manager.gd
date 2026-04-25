@@ -32,7 +32,10 @@ func change_level(key: String):
 	current_level.visible = true
 	current_level.collision_enabled = true
 	$Three/Bridge.collision_enabled = false
-	$Three/Startpoint/CollisionShape2D.disabled = true
+	for flag in ["Two", "Three"]:
+			get_node(flag + "/Checkpoint/CollisionShape2D").disabled = true
+			get_node(flag + "/Checkpoint/CollisionShape2D2").disabled = true
+	get_node(key + "/Checkpoint/CollisionShape2D2").disabled = false
 	
 	match key:
 		"One": CAMERA.limit_right = 3485
