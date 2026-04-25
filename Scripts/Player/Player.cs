@@ -160,6 +160,7 @@ public partial class Player : CharacterBody2D
         {
             // Out of health, die normally
             _spriteMaterial?.SetShaderParameter("is_hurt", false);
+            ClearPowerup();
 
             // 1. Stop all movement and state machine logic immediately
             SetPhysicsProcess(false);
