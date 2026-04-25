@@ -282,7 +282,9 @@ height = 7.999999
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=398213792]
 sprite_frames = SubResource("SpriteFrames_eo8vf")
-autoplay = "default"
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.74160826
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=751808700]
 position = Vector2(-8.5, 10)
