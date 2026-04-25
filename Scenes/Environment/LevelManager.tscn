@@ -22,7 +22,6 @@ metadata/_edit_vertical_guides_ = [3584.0]
 metadata/_edit_horizontal_guides_ = [480.0]
 
 [node name="One" parent="." unique_id=496805213 instance=ExtResource("2_x6i6a")]
-visible = false
 
 [node name="Two" parent="." unique_id=1027343712 instance=ExtResource("3_x6i6a")]
 visible = false
