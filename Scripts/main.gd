@@ -52,6 +52,7 @@ func _spawn_enemies():
 
 
 func _spawn_fruits():
+	for node in get_tree().get_nodes_in_group("Fruits"): node.queue_free()
 	var data = Config.DATA[level]["FruitSpawnPoints"]
 	
 	for Fruit in data:
@@ -91,3 +92,17 @@ func _on_fruit_collected(points: int) -> void:
 func _on_enemy_defeated(points: int) -> void:
 	$UI/CanvasLayer/Hud.score += points
 	$UI/CanvasLayer/Hud/Score/Score.text = str($UI/CanvasLayer/Hud.score).pad_zeros(5)
+
+func return_to_menu():
+	if has_node("Player"):
+		$Player.queue_free()
+		
+	for enemy in get_tree().get_nodes_in_group("Enemies"): 
+		enemy.queue_free()
+		
+	for fruit in get_tree().get_nodes_in_group("Fruits"): 
+		fruit.queue_free()
+		
+	$LevelManager.hide()
+	
+	$UI/CanvasLayer/MenuManager.open_menu("levelSelect")
