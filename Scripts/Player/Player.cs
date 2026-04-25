@@ -158,29 +158,7 @@ public partial class Player : CharacterBody2D
 
         if (CurrentHealth < 1)
         {
-            // Out of health, die normally
-            _spriteMaterial?.SetShaderParameter("is_hurt", false);
-            ClearPowerup();
-
-            // 1. Stop all movement and state machine logic immediately
-            SetPhysicsProcess(false);
-            SetProcess(false);
-
-            // 2. Safely disable the damage zones so the dying enemy cannot hurt the player
-            GetNode<Area2D>("PlayerHitbox").SetDeferred("monitorable", false);
-            GetNode<Area2D>("PlayerHitbox").SetDeferred("monitoring", false);
-            GetNode<Area2D>("PlayerHurtbox").SetDeferred("monitorable", false);
-            GetNode<Area2D>("PlayerHurtbox").SetDeferred("monitoring", false);
-
-            GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true);
-
-            // 3. Play the death animation (change "hit" to match your exact animation name)
-            Sprite.Play("died"); 
-
-            // 4. Wait for the AnimatedSprite2D to finish playing this specific animation
-            await ToSignal(Sprite, AnimatedSprite2D.SignalName.AnimationFinished);
-
-            CallDeferred(MethodName.EmitDied);
+            die()
         }
         else
         {
@@ -206,6 +184,33 @@ public partial class Player : CharacterBody2D
             Velocity = knockback;
             StateMachine.ChangeState("Fall");
         }
+    }
+
+    private void die()
+    {
+        // Out of health, die normally
+            _spriteMaterial?.SetShaderParameter("is_hurt", false);
+            ClearPowerup();
+
+            // 1. Stop all movement and state machine logic immediately
+            SetPhysicsProcess(false);
+            SetProcess(false);
+
+            // 2. Safely disable the damage zones so the dying enemy cannot hurt the player
+            GetNode<Area2D>("PlayerHitbox").SetDeferred("monitorable", false);
+            GetNode<Area2D>("PlayerHitbox").SetDeferred("monitoring", false);
+            GetNode<Area2D>("PlayerHurtbox").SetDeferred("monitorable", false);
+            GetNode<Area2D>("PlayerHurtbox").SetDeferred("monitoring", false);
+
+            GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true);
+
+            // 3. Play the death animation (change "hit" to match your exact animation name)
+            Sprite.Play("died"); 
+
+            // 4. Wait for the AnimatedSprite2D to finish playing this specific animation
+            await ToSignal(Sprite, AnimatedSprite2D.SignalName.AnimationFinished);
+
+            CallDeferred(MethodName.EmitDied);
     }
 
     private void StartInvincibility()
