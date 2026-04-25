@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://b85w7vugm2mh8" path="res://Assets/Art/Main Characters/Virtual Guy/Idle (32x32).png" id="1_uvnfx"]
 [ext_resource type="Script" uid="uid://fwqftx2xi2kd" path="res://Scripts/Player/Player.cs" id="1_wwtew"]
 [ext_resource type="Texture2D" uid="uid://d1tamtphvkus2" path="res://Assets/Art/Main Characters/Desappearing (96x96).png" id="2_aciub"]
-[ext_resource type="Shader" uid="uid://bstw7dyj12kds" path="res://Assets/player.gdshader" id="2_hk2ix"]
+[ext_resource type="Shader" uid="uid://bstw7dyj12kds" path="res://assets/player.gdshader" id="2_hk2ix"]
 [ext_resource type="Texture2D" uid="uid://d3isrjj2f2gpt" path="res://Assets/Art/Main Characters/Virtual Guy/Double Jump (32x32).png" id="2_xpcdj"]
 [ext_resource type="Texture2D" uid="uid://cho4d3xsuvwu0" path="res://Assets/Art/Main Characters/Virtual Guy/Fall (32x32).png" id="3_dl1wr"]
-[ext_resource type="PackedScene" uid="uid://jdj4brdtkony" path="res://Scenes/Components/camera.tscn" id="4_mtuoh"]
+[ext_resource type="PackedScene" uid="uid://jdj4brdtkony" path="res://scenes/Components/camera.tscn" id="4_mtuoh"]
 [ext_resource type="Texture2D" uid="uid://b2ad3sx0v8b5v" path="res://Assets/Art/Main Characters/Virtual Guy/Run (32x32).png" id="4_uiqp4"]
 [ext_resource type="Texture2D" uid="uid://b58y5wl2d2gfx" path="res://Assets/Art/Main Characters/Virtual Guy/Jump (32x32).png" id="5_wwtew"]
 [ext_resource type="Texture2D" uid="uid://blfvp1si5r5ma" path="res://Assets/Art/Main Characters/Virtual Guy/Hit (32x32).png" id="6_43ckd"]
@@ -19,8 +19,8 @@
 [ext_resource type="Script" uid="uid://bs223vurj2uhk" path="res://Scripts/Player/States/PlayerWallSlide.cs" id="14_1bwnf"]
 [ext_resource type="Script" uid="uid://bbxq81181otge" path="res://Scripts/Player/States/PlayerDoubleJump.cs" id="14_t6q27"]
 [ext_resource type="Script" uid="uid://cu5pbdmgunwr" path="res://Scripts/Player/States/PlayerWallJump.cs" id="15_tayva"]
-[ext_resource type="PackedScene" uid="uid://c83jph27j3326" path="res://Scenes/Components/hurtbox.tscn" id="17_x8khf"]
-[ext_resource type="PackedScene" uid="uid://dbe88gt4adpop" path="res://Scenes/Components/hitbox.tscn" id="18_aciub"]
+[ext_resource type="PackedScene" uid="uid://c83jph27j3326" path="res://scenes/Components/hurtbox.tscn" id="17_x8khf"]
+[ext_resource type="PackedScene" uid="uid://dbe88gt4adpop" path="res://scenes/Components/hitbox.tscn" id="18_aciub"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_43ckd"]
 shader = ExtResource("2_hk2ix")
@@ -437,6 +437,7 @@ height = 14.285721
 [node name="Player" type="CharacterBody2D" unique_id=1695953942 groups=["Player"]]
 scale = Vector2(0.7, 0.7)
 script = ExtResource("1_wwtew")
+InvincibilityDuration = 600.0
 JumpVelocity = -250.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=85044737]

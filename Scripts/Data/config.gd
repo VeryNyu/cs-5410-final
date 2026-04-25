@@ -35,7 +35,7 @@ var DATA: Dictionary = {
 				Vector2i(2000, 200),
 				Vector2i(3112, 200),
 				Vector2i(3080, 200),
-				Vector2i(3144, 200)
+				Vector2i(3144, 200),
 				]
 		},
 		"FruitSpawnPoints": {
@@ -50,18 +50,41 @@ var DATA: Dictionary = {
 				Vector2i(744, 136),
 				Vector2i(760, 136),
 				],
-			"Strawberry": [],
-			"Kiwi": [],
+			"Strawberry": [
+				Vector2i(1096, 72),
+				Vector2i(1080, 72),
+				Vector2i(1112, 72),
+				Vector2i(1768, 88),
+				Vector2i(1752, 88),
+				Vector2i(1784, 88),
+			],
+			"Kiwi": [
+				Vector2i(1464, 120),
+				Vector2i(1480, 120),
+				Vector2i(2072, 120),
+				Vector2i(2088, 120),
+			],
 			"Orange": [
 				Vector2i(296, 56),
 				Vector2i(312, 56)
 				],
-			"Apple": [],
-			"Banana": [
+			"Apple": [
 				Vector2i(168, 120),
-				Vector2i(232, 120)],
-			"Melon": [],
-			"Pineapple": []
+				Vector2i(232, 120),
+				Vector2i(3080, 200),
+				Vector2i(3144, 200),
+			],
+			"Banana": [
+				Vector2i(2456, 216),
+				Vector2i(2472, 216),
+				],
+			"Melon": [
+				Vector2i(1250, 168),
+				Vector2i(3112, 200),
+			],
+			"Pineapple": [
+				Vector2i(1768, 136),
+			]
 		}
 	},
 	1: {
