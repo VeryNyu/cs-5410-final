@@ -25,9 +25,9 @@ var DATA: Dictionary = {
 				Vector2i(1456, 56),
 				Vector2i(1712, 87),
 				Vector2i(1824, 87),
-				Vector2i(2700, 200),
-				Vector2i(2800, 200),
-				Vector2i(2750, 200),
+				Vector2i(2680, 200),
+				Vector2i(2776, 200),
+				Vector2i(2872, 200),
 				Vector2i(2568, 200),
 				],
 			"NinjaFrog": [
