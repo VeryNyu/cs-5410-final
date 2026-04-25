@@ -18,8 +18,8 @@ var DATA: Dictionary = {
 	0: {
 		"PlayerSpawnPoint": Vector2i(37, 201),
 		"EnemySpawnPoints": {
-			"PinkGuy": [],
-			"NinjaFrog": []
+			"PinkGuy": [Vector2i(300, 200), Vector2i(250, 200), Vector2i(200, 200), Vector2i(150, 200), Vector2i(350, 200)],
+			"NinjaFrog": [Vector2i(1200, 200)]
 		},
 		"FruitSpawnPoints": {
 			"Cherry": [],
