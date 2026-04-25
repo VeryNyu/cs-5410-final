@@ -27,8 +27,8 @@ func _on_game_start(key: String) -> void:
 
 func _spawn_objects():
 	_spawn_player()
+	await _spawn_fruits()
 	_spawn_enemies()
-	_spawn_fruits()
 
 
 func _spawn_player():
