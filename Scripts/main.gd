@@ -58,6 +58,7 @@ func _spawn_fruits():
 	for Fruit in data:
 		for location in data[Fruit]:
 			var fruit = FRUIT_SCENES.instantiate()
+			fruit.body = Fruit.to_lower()
 			fruit.position = location
 			fruit.value = Config.VALUES[Fruit]
 			fruit.collect.connect(_on_fruit_collected)

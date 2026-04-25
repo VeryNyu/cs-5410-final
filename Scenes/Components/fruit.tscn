@@ -1064,7 +1064,7 @@ script = ExtResource("1_iax0i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1288785859]
 sprite_frames = SubResource("SpriteFrames_6bw35")
-animation = &"banana"
+animation = &"strawberry"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2065894358]
 shape = SubResource("CircleShape2D_qtafa")
