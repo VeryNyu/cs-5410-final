@@ -158,7 +158,7 @@ public partial class Player : CharacterBody2D
 
         if (CurrentHealth < 1)
         {
-            die()
+            die();
         }
         else
         {
@@ -186,7 +186,7 @@ public partial class Player : CharacterBody2D
         }
     }
 
-    private void die()
+    private async void die()
     {
         // Out of health, die normally
             _spriteMaterial?.SetShaderParameter("is_hurt", false);
