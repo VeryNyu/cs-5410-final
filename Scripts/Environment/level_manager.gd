@@ -32,6 +32,7 @@ func change_level(key: String):
 	current_level.visible = true
 	current_level.collision_enabled = true
 	$Three/Bridge.collision_enabled = false
+	$Three/Startpoint/CollisionShape2D.disabled = true
 	
 	match key:
 		"One": CAMERA.limit_right = 3485
@@ -39,6 +40,7 @@ func change_level(key: String):
 		"Three":
 			CAMERA.limit_right = 2560
 			$Three/Bridge.collision_enabled = true
+			$Three/Startpoint/CollisionShape2D.disabled = false
 
 
 func _on_goal() -> void:
