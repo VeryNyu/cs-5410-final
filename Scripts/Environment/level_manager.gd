@@ -35,6 +35,7 @@ func change_level(key: String):
 	for flag in ["Two", "Three"]:
 			get_node(flag + "/Checkpoint/CollisionShape2D").disabled = true
 			get_node(flag + "/Checkpoint/CollisionShape2D2").disabled = true
+	get_node(key + "/Checkpoint/CollisionShape2D").disabled = false
 	get_node(key + "/Checkpoint/CollisionShape2D2").disabled = false
 	
 	match key:
