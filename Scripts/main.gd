@@ -3,7 +3,8 @@ extends Node2D
 var PLAYER_SCENE: PackedScene = preload("res://Scenes/Player/player.tscn")
 var ENEMY_SCENES: Dictionary = {
 	"NinjaFrog": preload("res://Scenes/Enemies/NinjaFrog.tscn"),
-	"PinkGuy": preload("res://Scenes/Enemies/PinkGuy.tscn")
+	"PinkGuy": preload("res://Scenes/Enemies/PinkGuy.tscn"),
+	"BossFrog": preload("res://Scenes/Enemies/BossFrog.tscn")
 }
 var FRUIT_SCENES: PackedScene = preload("res://Scenes/Components/fruit.tscn")
 
