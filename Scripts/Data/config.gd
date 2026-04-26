@@ -3,6 +3,7 @@ extends Node
 const VALUES: Dictionary = {
 	"PinkGuy": 50,
 	"NinjaFrog": 250,
+	"BossFrog": 500,
 	
 	"Cherry": 100,
 	"Strawberry": 150,
@@ -172,6 +173,8 @@ var DATA: Dictionary = {
 				Vector2i(1352, 144),
 				Vector2i(1488, 144),
 				Vector2i(1792, 192),
+				Vector2i(2184, 152),
+				Vector2i(2176, 152),
 			],
 			"BossFrog": [
 				Vector2i(2232, 124)
