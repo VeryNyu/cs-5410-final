@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 
 func Game_Start():
 	time_elapsed = 0.0
-	$Score/Score.text = "00000"
+	$Score/Score.text = "0000"
 	show()
 	is_stopped = false
 
