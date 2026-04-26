@@ -113,7 +113,7 @@ var DATA: Dictionary = {
 				Vector2i(1752, 136),
 				Vector2i(1768, 136),
 				Vector2i(1848, 168),
-				Vector2i(1862, 128),
+				Vector2i(1862, 168),
 			],
 			"Strawberry": [
 				Vector2i(936, 136),
