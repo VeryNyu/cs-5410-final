@@ -194,14 +194,42 @@ var DATA: Dictionary = {
 			]
 		},
 		"FruitSpawnPoints": {
-			"Cherry": [],
-			"Strawberry": [],
-			"Kiwi": [],
-			"Orange": [],
-			"Apple": [],
-			"Banana": [],
-			"Melon": [],
-			"Pineapple": []
+			"Cherry": [
+				Vector2i(648, 96),
+				Vector2i(744, 96),
+				Vector2i(840, 96),
+				Vector2i(904, 96),
+				Vector2i(1000, 96),
+				Vector2i(1096, 96),
+			],
+			"Strawberry": [
+				Vector2i(1944, 192),
+				Vector2i(1944, 176),
+			],
+			"Kiwi": [
+				Vector2i(1704, 192),
+				Vector2i(1736, 192),
+				Vector2i(1768, 192),
+				Vector2i(1800, 192),
+			],
+			"Orange": [
+				Vector2i(408, 72),
+				Vector2i(568, 72),
+			],
+			"Apple": [
+				Vector2i(344, 88),
+			],
+			"Banana": [
+				Vector2i(440, 216),
+				Vector2i(536, 216),
+			],
+			"Melon": [
+				Vector2i(1216, 64),
+				Vector2i(1488, 64),
+			],
+			"Pineapple": [
+				Vector2i(1352, 64),
+			]
 		},
 		"Coin Locations": [
 			Vector2i(1704, 152),
