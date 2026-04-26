@@ -176,7 +176,7 @@ height = 24.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_11fbe"]
 resource_local_to_scene = true
-radius = 100.0
+radius = 75.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jrdps"]
 radius = 3.0
@@ -210,6 +210,9 @@ position = Vector2(0, 10)
 
 [node name="BehaviorManager" parent="." index="5" unique_id=640706303]
 InitialStateName = "JumpingIdle"
+
+[node name="JumpingChase" parent="BehaviorManager" index="3" unique_id=1308982107]
+AirControl = 750.0
 
 [node name="CollisionShape2D" parent="EnemyHurtbox" parent_id_path=PackedInt32Array(747945340) index="0" unique_id=709159978]
 position = Vector2(0, -10.667)
