@@ -90,11 +90,11 @@ func _on_goal() -> void:
 
 func _on_fruit_collected(points: int) -> void:
 	$UI/CanvasLayer/Hud.score += points
-	$UI/CanvasLayer/Hud/Score/Score.text = str($UI/CanvasLayer/Hud.score).pad_zeros(5)
+	$UI/CanvasLayer/Hud/Score/Score.text = str($UI/CanvasLayer/Hud.score).pad_zeros(4)
 	
 func _on_enemy_defeated(points: int) -> void:
 	$UI/CanvasLayer/Hud.score += points
-	$UI/CanvasLayer/Hud/Score/Score.text = str($UI/CanvasLayer/Hud.score).pad_zeros(5)
+	$UI/CanvasLayer/Hud/Score/Score.text = str($UI/CanvasLayer/Hud.score).pad_zeros(4)
 
 func return_to_menu():
 	if has_node("Player"):

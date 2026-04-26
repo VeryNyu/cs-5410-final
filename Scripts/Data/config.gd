@@ -217,15 +217,7 @@ var DATA: Dictionary = {
 			"Pineapple": [
 				Vector2i(1352, 64),
 			]
-		},
-		"Coin Locations": [
-			Vector2i(1704, 152),
-			Vector2i(1720, 88),
-			Vector2i(1736, 152),
-			Vector2i(1752, 88),
-			Vector2i(1768, 152),
-			Vector2i(1784, 88),
-		]
+		}
 	}
 }
 
