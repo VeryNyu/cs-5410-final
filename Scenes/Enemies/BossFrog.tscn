@@ -189,9 +189,7 @@ height = 10.0
 [node name="NinjaFrog" unique_id=236515003 instance=ExtResource("1_11fbe")]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("2_b25n3")
-MoveSpeed = 90.0
-ChaseSpeed = 120.0
-ScoreValue = 250
+ScoreValue = 500
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=2049654916]
 position = Vector2(0, -4)
