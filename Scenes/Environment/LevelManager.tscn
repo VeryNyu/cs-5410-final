@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bmce67241nwio"]
 
 [ext_resource type="Script" uid="uid://c7kntw6in2rle" path="res://Scripts/Environment/level_manager.gd" id="1_dchpr"]
-[ext_resource type="PackedScene" uid="uid://obxpxqf5evem" path="res://Scenes/Environment/Levels/One.tscn" id="2_x6i6a"]
-[ext_resource type="PackedScene" uid="uid://dtultj761sxgq" path="res://Scenes/Environment/Levels/Two.tscn" id="3_x6i6a"]
-[ext_resource type="PackedScene" uid="uid://d2mnmkoy1i0in" path="res://Scenes/Environment/Levels/Three.tscn" id="4_6d45x"]
-[ext_resource type="PackedScene" uid="uid://dbe88gt4adpop" path="res://Scenes/Components/hitbox.tscn" id="7_toqnr"]
+[ext_resource type="PackedScene" uid="uid://obxpxqf5evem" path="res://scenes/Environment/Levels/One.tscn" id="2_x6i6a"]
+[ext_resource type="PackedScene" uid="uid://dtultj761sxgq" path="res://scenes/Environment/Levels/Two.tscn" id="3_x6i6a"]
+[ext_resource type="PackedScene" uid="uid://d2mnmkoy1i0in" path="res://scenes/Environment/Levels/Three.tscn" id="4_6d45x"]
+[ext_resource type="PackedScene" uid="uid://dbe88gt4adpop" path="res://scenes/Components/hitbox.tscn" id="7_toqnr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uh3lk"]
 size = Vector2(3851, 46)
@@ -22,6 +22,7 @@ metadata/_edit_vertical_guides_ = [3584.0]
 metadata/_edit_horizontal_guides_ = [480.0, 97.0]
 
 [node name="One" parent="." unique_id=496805213 instance=ExtResource("2_x6i6a")]
+visible = false
 
 [node name="Two" parent="." unique_id=1027343712 instance=ExtResource("3_x6i6a")]
 visible = false

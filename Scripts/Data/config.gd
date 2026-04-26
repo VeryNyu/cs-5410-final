@@ -90,32 +90,52 @@ var DATA: Dictionary = {
 	1: {
 		"PlayerSpawnPoint": Vector2i(26, 177),
 		"EnemySpawnPoints": {
-			"PinkGuy": [],
-			"NinjaFrog": []
+			"PinkGuy": [
+				Vector2i(280, 184),
+				Vector2i(472, 200),
+				Vector2i(744, 200),
+				Vector2i(688, 104),
+				Vector2i(920, 200),
+				Vector2i(1200, 200),
+				Vector2i(1968, 200),
+			],
+			"NinjaFrog": [
+				Vector2i(1560, 200),
+				Vector2i(2384, 200),
+			]
 		},
 		"FruitSpawnPoints": {
 			"Cherry": [
 				Vector2i(648, 136),
-				Vector2i(728, 136)
+				Vector2i(728, 136),
+				Vector2i(1656, 152),
+				Vector2i(1672, 152),
+				Vector2i(1752, 136),
+				Vector2i(1768, 136),
+				Vector2i(1848, 168),
+				Vector2i(1862, 128),
 			],
 			"Strawberry": [
 				Vector2i(936, 136),
 				Vector2i(952, 136),
 				Vector2i(968, 136),
 				Vector2i(984, 136),
-				Vector2i(1096, 136)
+				Vector2i(1096, 136),
+				Vector2i(1240, 136),
+				Vector2i(1256, 136),
 			],
 			"Kiwi": [
 				Vector2i(664, 88),
 				Vector2i(680, 88),
 				Vector2i(696, 88),
-				Vector2i(712, 88)
-			],
-			"Orange": [
+				Vector2i(712, 88),
 				Vector2i(664, 88),
 				Vector2i(680, 88),
 				Vector2i(696, 88),
-				Vector2i(712, 88)
+				Vector2i(712, 88),
+			],
+			"Orange": [
+				
 			],
 			"Apple": [
 				Vector2i(1352, 88),
@@ -127,7 +147,9 @@ var DATA: Dictionary = {
 			],
 			"Banana": [],
 			"Melon": [],
-			"Pineapple": []
+			"Pineapple": [
+				Vector2i(1168, 72),
+			]
 		},
 		"Coin Locations": [
 			Vector2i(648, 136),
