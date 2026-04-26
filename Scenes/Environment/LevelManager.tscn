@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dbe88gt4adpop" path="res://scenes/Components/hitbox.tscn" id="7_toqnr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uh3lk"]
-size = Vector2(3851, 46)
+size = Vector2(3851, 602)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dcc18"]
 
@@ -37,7 +37,7 @@ collision_mask = 6
 Damage = 3
 
 [node name="CollisionShape2D" parent="DeathPlane" index="0" unique_id=1679217]
-position = Vector2(920.5, -127)
+position = Vector2(920.5, 151)
 shape = SubResource("RectangleShape2D_uh3lk")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=797350627]
